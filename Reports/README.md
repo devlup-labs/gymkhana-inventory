@@ -3,7 +3,8 @@
 **All the Students participating in WoC through this project should maintain a work report. This will help you in getting familiar with the GSoC Project reports**
 
 *Name your report in this fashion : (Team-Abbreviation)_studentname_WoC_report.md*
-*FE - Frontend, BE Backend*
+
+FE - Frontend, BE Backend
 *ex: FE_anshul_WoC_report.md*
 *ex: BE_yashvi_WoC_report.md*
 
