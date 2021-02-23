@@ -1,4 +1,4 @@
-# gymkhana-inventory
+# Gymkhana Inventory
 WebApp to manage Gymkhana Inventory
 
 **Getting Started with Contributions**
