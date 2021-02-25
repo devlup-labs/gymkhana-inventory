@@ -1,14 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
 
-class AdminProfile extends Component {
-  render() {
+ function AdminProfile(){
     return (
       <div>
-        This is AdminProfile
+        This is AdminProfile Page
       </div>
     );
   }
-}
+
 
 export default AdminProfile;

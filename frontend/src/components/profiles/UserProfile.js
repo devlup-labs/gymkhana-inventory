@@ -1,14 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
 
-class UserProfile extends Component {
-  render() {
+ function UserProfile(){
     return (
       <div>
-        This is UserProfile
+        This is UserProfile Page
       </div>
     );
   }
-}
+
 
 export default UserProfile;

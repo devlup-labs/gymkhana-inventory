@@ -1,14 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
 
-class SearchResults extends Component {
-  render() {
+ function SearchResults(){
     return (
       <div>
-        This is SearchResults
+        This is Search Page
       </div>
     );
   }
-}
+
 
 export default SearchResults;
