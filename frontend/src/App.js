@@ -2,6 +2,7 @@ import './App.css';
 import PrimarySearchAppBar from './components/navbar';
 import { BrowserRouter} from 'react-router-dom';
 import Router from './Router';
+import Footer from './components/footer';
 
 
 
@@ -19,7 +20,7 @@ function App() {
           
           
           <div className="footer">
-            <h1>Footer</h1>
+            <Footer/>
           </div>
         </div>
     </BrowserRouter>
