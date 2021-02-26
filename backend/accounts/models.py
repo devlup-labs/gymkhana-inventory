@@ -35,7 +35,7 @@ def create_user_profile(sender, instance, created, **kwargs):
     if created:
         mail_prefix = instance.email.split('@')
 
-        if mail_prefix not in list(societyIds.keys()):
+        if mail_prefix[0] not in list(societyIds.keys()):
 
             u = Borrower.objects.create(user=instance, mail=instance.email, name=instance.first_name)
             u.save()
@@ -43,5 +43,5 @@ def create_user_profile(sender, instance, created, **kwargs):
         else:
 
             u = SocietyAdmin.objects.create(user=instance, society_name=instance.first_name,
-                                            society_id=societyIds[mail_prefix])
+                                            society_id=societyIds[mail_prefix[0]])
             u.save()
