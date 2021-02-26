@@ -38,3 +38,18 @@ def add_equipment(request):
         return JsonResponse({'error': str(e)}, safe=False, status=status.HTTP_404_NOT_FOUND)
     except Exception:
         return JsonResponse({'error': 'Something terrible went wrong'}, safe=False, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+@api_view(["PUT"])
+@csrf_exempt
+def update_equipment(request, id):
+    payload = json.loads(request.body)
+    try:
+        equip = Equipment.objects.filter(id=id)
+        equip.update(**payload)
+        equip1 = Equipment.objects.get(id=id)
+        serializer = EquipmentSerializer(equip1)
+        return JsonResponse({'equipment': serializer.data}, safe=False, status=status.HTTP_200_OK)
+    except ObjectDoesNotExist as e:
+        return JsonResponse({'error': str(e)}, safe=False, status=status.HTTP_404_NOT_FOUND)
+    except Exception:
+        return JsonResponse({'error': 'Something terrible went wrong'}, safe=False, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
