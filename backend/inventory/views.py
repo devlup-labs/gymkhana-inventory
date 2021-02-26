@@ -18,3 +18,23 @@ def get_equipment_by_society(request):
     equip = Equipment.objects.filter(societyname=society)
     serializer = EquipmentSerializer(equip, many=True)
     return JsonResponse({'equipments': serializer.data}, safe=False, status=status.HTTP_200_OK)
+
+@api_view(["POST"])
+@csrf_exempt
+def add_equipment(request):
+    payload = json.loads(request.body)
+    try:
+        society=Society.objects.get(name=payload["society"])
+        equipment=Equipment.objects.create(
+            name=payload["name"],
+            description=payload["description"],
+            quantity=payload["quantity"],
+            societyname=society,
+            numavail=payload["numavail"]
+        )
+        serializer=EquipmentSerializer(equipment)
+        return JsonResponse({'equipment': serializer.data}, safe=False, status=status.HTTP_201_CREATED)
+    except ObjectDoesNotExist as e:
+        return JsonResponse({'error': str(e)}, safe=False, status=status.HTTP_404_NOT_FOUND)
+    except Exception:
+        return JsonResponse({'error': 'Something terrible went wrong'}, safe=False, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
