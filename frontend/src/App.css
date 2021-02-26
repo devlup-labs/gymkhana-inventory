@@ -60,3 +60,44 @@
      margin-right: 3px;
  }
  
+ 
+.home input[type=text] {
+    border: none;
+    background-color: none;
+    outline: 0;
+    font-size: 18px;
+    width:270px;
+    padding-left:10px;
+  }
+
+.home input[type=text]:focus {
+    border: none;
+    background-color: none;
+    outline: 0;
+  }
+  
+.home .search-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../src/star.jpg");
+    background-repeat: no-repeat;
+    height:60vh;
+    width: 100%;
+    background-size: cover;
+    align-items: center;
+    background-position: center;
+}
+.home .search-bar{
+    background-color: white;
+    width:max-content;
+    border-radius: 5px;
+
+}
+.home #heading{
+    margin:2px;
+    text-align: center;
+}
+.home .texts{
+    color:white
+}

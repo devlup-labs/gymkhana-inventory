@@ -13,6 +13,8 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import Avatar from '@material-ui/core/Avatar';
 import { Link } from 'react-router-dom';
 import logo from '../../logo.png';
+import GoogleSocialAuth from './Login'
+
 // import CustomScroll from 'react-custom-scroll';
 
 const useStyles = makeStyles((theme) => ({
@@ -139,14 +141,17 @@ export default function PrimarySearchAppBar() {
           <Typography className={classes.title} variant="h6" noWrap>
             Gymkhana-Inventory
           </Typography>
-
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+          <div>
+              <GoogleSocialAuth/>
+           </div>
             <IconButton aria-label="show 17 new notifications" color="black">
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon  color='black'/>
               </Badge>
             </IconButton>
+
             <IconButton
               edge="end"
               aria-label="account of current user"
