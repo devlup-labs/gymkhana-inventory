@@ -7,6 +7,8 @@ WebApp to manage Gymkhana Inventory
 _General Instructions_
 
 - Fork the Repo
+- Rebase your repo with this parent repo before making any PR
+- Check for conflicts
 - Start Coding
 
 Happy Coding
