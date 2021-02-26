@@ -2,14 +2,28 @@ import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/navbar/index";
 import ItemPage from "./components/pages/ItemPage";
+import PrimarySearchAppBar from "./components/navbar";
+import { BrowserRouter } from "react-router-dom";
+import Router from "./Router";
+import Footer from "./components/footer";
+
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <div className="Itemname">
-        <ItemPage />
+    <BrowserRouter>
+      <div className="container">
+        <div className="header">
+          <PrimarySearchAppBar />
+        </div>
+
+        <div className="router-div">
+          <Router />
+        </div>
+
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
