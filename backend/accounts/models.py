@@ -45,3 +45,4 @@ def create_user_profile(sender, instance, created, **kwargs):
             u = SocietyAdmin.objects.create(user=instance, society_name=instance.first_name,
                                             society_id=societyIds[mail_prefix[0]])
             u.save()
+
