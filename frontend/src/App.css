@@ -1,4 +1,3 @@
-
 .App {
   text-align: center;
 }
@@ -7,64 +6,104 @@
   text-align: left;
 }
 
-.container{
-  width:100%;
- }
- .footer{
-  position: absolute;   
-  background-color:#f9f7f7;
+.container {
   width: 100%;
- }
- 
- .router-div{
-     min-height: 80vh;
- }
- 
- .footer .main-footer{
-     display: flex;
-     justify-content: space-around;
-     color:black;
-     padding-left: 50px;
-     padding-right: 50px;
-     padding-bottom: 10px;
-     background-color:#dbe2ef;
- }
- 
- .footer .column-1{
-     padding-top:35px;
-     padding-left: 30px;
-     width:25%;
- }
- /* .column-2{
+}
+.footer {
+  position: absolute;
+  background-color: #f9f7f7;
+  width: 100%;
+}
+
+.router-div {
+  min-height: 80vh;
+}
+
+.footer .main-footer {
+  display: flex;
+  justify-content: space-around;
+  color: black;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+  background-color: #dbe2ef;
+}
+
+.footer .column-1 {
+  padding-top: 35px;
+  padding-left: 30px;
+  width: 25%;
+}
+/* .column-2{
  } */
- .footer .column-3{
-     padding-top: 25px;
-     width:25%;
-     align-items: flex-end;
-     padding-right: 30px;
- }
- 
- .footer .footer-content{
-     padding: 0px;
-     margin:0px;
- }
- 
- .footer .footer-list{
-     list-style: none;
-     margin:0;
-     padding: 0;
- }
- 
- .footer .secondary-footer{
-     display: flex;
-     justify-content: center;
-     padding-top: 10px;
-     background-color: #3f72af;
-     color: white;
-     height:40px;
- }
- 
- .footer .heart{
-     margin-left: 3px;
-     margin-right: 3px;
- }
+.footer .column-3 {
+  padding-top: 25px;
+  width: 25%;
+  align-items: flex-end;
+  padding-right: 30px;
+}
+
+.footer .footer-content {
+  padding: 0px;
+  margin: 0px;
+}
+
+.footer .footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .secondary-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  background-color: #3f72af;
+  color: white;
+  height: 40px;
+}
+
+.footer .heart {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.home input[type="text"] {
+  border: none;
+  background-color: none;
+  outline: 0;
+  font-size: 18px;
+  width: 270px;
+  padding-left: 10px;
+}
+
+.home input[type="text"]:focus {
+  border: none;
+  background-color: none;
+  outline: 0;
+}
+
+.home .search-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../src/star.jpg");
+  background-repeat: no-repeat;
+  height: 60vh;
+  width: 100%;
+  background-size: cover;
+  align-items: center;
+  background-position: center;
+}
+.home .search-bar {
+  background-color: white;
+  width: max-content;
+  border-radius: 5px;
+}
+.home #heading {
+  margin: 2px;
+  text-align: center;
+}
+.home .texts {
+  color: white;
+}
