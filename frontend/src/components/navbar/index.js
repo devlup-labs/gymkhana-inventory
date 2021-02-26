@@ -11,7 +11,9 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Avatar from '@material-ui/core/Avatar';
+import { Link } from 'react-router-dom';
 import logo from '../../logo.png';
+// import CustomScroll from 'react-custom-scroll';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -80,7 +82,7 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose} component={Link} to="/profile">Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>LogOut</MenuItem>
     </Menu>
   );
@@ -125,6 +127,8 @@ export default function PrimarySearchAppBar() {
       <AppBar position="static" style={{backgroundColor: "#f9f7f7"}}>
         <Toolbar>
           <IconButton
+            component= {Link}
+            to="/"
             edge="start"
             className={classes.menuButton}
             color="black"
