@@ -83,9 +83,9 @@ function AdminProfile(props) {
                             <TextField id="outlined-basic" label="Role" />
                             <Button className={classes.root} variant="contained" style={{backgroundColor:'#112d4e' , color:'white',margin:'8px'}}>Add</Button>                            
                         </form>
-                        {data.manage.map((card)=>{
+                        {data.manage.map((card,index)=>{
                             return (
-                                <ManageAccess name={card.name} email={card.email} role={card.role}/>
+                                <ManageAccess key={index} name={card.name} email={card.email} role={card.role}/>
                             );
                         })}
                     </Box>
@@ -101,6 +101,7 @@ function AdminProfile(props) {
                                 {data.items.map((card)=>{
                             return (
                                 <Item 
+                                key={card.itemId}
                                 itemId={card.itemId} 
                                 itemName={card.itemName} 
                                 requestingDate={card.requestingDate} 
@@ -114,6 +115,7 @@ function AdminProfile(props) {
                                 {data.items.map((card)=>{
                             return (
                                 <Item 
+                                key={card.itemId}
                                 itemId={card.itemId} 
                                 itemName={card.itemName} 
                                 requestingDate={card.requestingDate} 
@@ -129,6 +131,7 @@ function AdminProfile(props) {
                         {data.items.map((card)=>{
                             return (
                                 <Item 
+                                key={card.itemId}
                                 itemId={card.itemId} 
                                 itemName={card.itemName} 
                                 requestingDate={card.requestingDate} 
