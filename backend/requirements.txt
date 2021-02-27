@@ -2,3 +2,10 @@ Django~=3.1.7
 djangorestframework~=3.12.2
 django_cors_headers~=3.7.0
 
+Backend :
+
+Django (pip install django) , version = 3.1.7
+Django Rest framework (pip install djangorestframework==3.11.0) , version = 3.11.0
+django-rest-auth (pip install django-rest-auth)
+django-allauth (pip install django-allauth)
+CORS (pip install django-cors-headers)
