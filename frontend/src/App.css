@@ -1,103 +1,158 @@
-.container{
-  width:100%;
- }
- .footer{
-  position: absolute;   
-  background-color:#f9f7f7;
+.container {
   width: 100%;
- }
- 
- .router-div{
-     min-height: 80vh;
- }
- 
- .footer .main-footer{
-     display: flex;
-     justify-content: space-around;
-     color:black;
-     padding-left: 50px;
-     padding-right: 50px;
-     padding-bottom: 10px;
-     background-color:#dbe2ef;
- }
- 
- .footer .column-1{
-     padding-top:35px;
-     padding-left: 30px;
-     width:25%;
- }
- /* .column-2{
+}
+.footer {
+  position: absolute;
+  background-color: #f9f7f7;
+  width: 100%;
+}
+
+.router-div {
+  min-height: 80vh;
+}
+
+.footer .main-footer {
+  display: flex;
+  justify-content: space-around;
+  color: black;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+  background-color: #dbe2ef;
+}
+
+.footer .column-1 {
+  padding-top: 35px;
+  padding-left: 30px;
+  width: 25%;
+}
+/* .column-2{
  } */
- .footer .column-3{
-     padding-top: 25px;
-     width:25%;
-     align-items: flex-end;
-     padding-right: 30px;
- }
- 
- .footer .footer-content{
-     padding: 0px;
-     margin:0px;
- }
- 
- .footer .footer-list{
-     list-style: none;
-     margin:0;
-     padding: 0;
- }
- 
- .footer .secondary-footer{
-     display: flex;
-     justify-content: center;
-     padding-top: 10px;
-     background-color: #3f72af;
-     color: white;
-     height:40px;
- }
- 
- .footer .heart{
-     margin-left: 3px;
-     margin-right: 3px;
- }
- 
- 
-.home input[type=text] {
-    border: none;
-    background-color: none;
-    outline: 0;
-    font-size: 18px;
-    width:270px;
-    padding-left:10px;
-  }
+.footer .column-3 {
+  padding-top: 25px;
+  width: 25%;
+  align-items: flex-end;
+  padding-right: 30px;
+}
 
-.home input[type=text]:focus {
-    border: none;
-    background-color: none;
-    outline: 0;
-  }
-  
-.home .search-area{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-image: url("../src/star.jpg");
-    background-repeat: no-repeat;
-    height:60vh;
-    width: 100%;
-    background-size: cover;
-    align-items: center;
-    background-position: center;
+.footer .footer-content {
+  padding: 0px;
+  margin: 0px;
 }
-.home .search-bar{
-    background-color: white;
-    width:max-content;
-    border-radius: 5px;
 
+.footer .footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.home #heading{
-    margin:2px;
-    text-align: center;
+
+.footer .secondary-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  background-color: #3f72af;
+  color: white;
+  height: 40px;
 }
-.home .texts{
-    color:white
+
+.footer .heart {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.home input[type="text"] {
+  border: none;
+  background-color: none;
+  outline: 0;
+  font-size: 18px;
+  width: 270px;
+  padding-left: 10px;
+}
+
+.home input[type="text"]:focus {
+  border: none;
+  background-color: none;
+  outline: 0;
+}
+
+.home .search-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../src/star.jpg");
+  background-repeat: no-repeat;
+  height: 60vh;
+  width: 100%;
+  background-size: cover;
+  align-items: center;
+  background-position: center;
+}
+.home .search-bar {
+  background-color: white;
+  width: max-content;
+  border-radius: 5px;
+}
+.home #heading {
+  margin: 2px;
+  text-align: center;
+}
+.home .texts {
+  color: white;
+}
+
+.admin {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.adminHeader {
+  display: flex;
+  flex-direction: row;
+  background-color: #f9f7f7;
+  color: black;
+  padding: 4px;
+}
+.adminHeader > .MuiAvatar-root {
+  margin: 5px;
+  width: 60px;
+  height: 60px;
+}
+
+.adminBody {
+  justify-content: center;
+  background-color: #f9f7f7;
+  padding: 10px;
+}
+
+.cards {
+  box-shadow: 2px 4px 5px 4px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.cardContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 8px;
+}
+
+.buttonAdmin {
+  justify-content: center;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.buttonAdmin > .MuiButtonBase-root {
+  margin: 4px;
+  background-color: #112d4e;
 }
