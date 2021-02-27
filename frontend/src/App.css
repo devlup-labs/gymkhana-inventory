@@ -1,103 +1,197 @@
-.container{
-  width:100%;
- }
- .footer{
-  position: absolute;   
-  background-color:#f9f7f7;
+.container {
   width: 100%;
- }
- 
- .router-div{
-     min-height: 80vh;
- }
- 
- .footer .main-footer{
-     display: flex;
-     justify-content: space-around;
-     color:black;
-     padding-left: 50px;
-     padding-right: 50px;
-     padding-bottom: 10px;
-     background-color:#dbe2ef;
- }
- 
- .footer .column-1{
-     padding-top:35px;
-     padding-left: 30px;
-     width:25%;
- }
- /* .column-2{
+}
+.footer {
+  position: absolute;
+  background-color: #f9f7f7;
+  width: 100%;
+}
+
+.router-div {
+  min-height: 80vh;
+}
+
+.footer .main-footer {
+  display: flex;
+  justify-content: space-around;
+  color: black;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+  background-color: #dbe2ef;
+}
+
+.footer .column-1 {
+  padding-top: 35px;
+  padding-left: 30px;
+  width: 25%;
+}
+/* .column-2{
  } */
- .footer .column-3{
-     padding-top: 25px;
-     width:25%;
-     align-items: flex-end;
-     padding-right: 30px;
- }
- 
- .footer .footer-content{
-     padding: 0px;
-     margin:0px;
- }
- 
- .footer .footer-list{
-     list-style: none;
-     margin:0;
-     padding: 0;
- }
- 
- .footer .secondary-footer{
-     display: flex;
-     justify-content: center;
-     padding-top: 10px;
-     background-color: #3f72af;
-     color: white;
-     height:40px;
- }
- 
- .footer .heart{
-     margin-left: 3px;
-     margin-right: 3px;
- }
- 
- 
-.home input[type=text] {
-    border: none;
-    background-color: none;
-    outline: 0;
-    font-size: 18px;
-    width:270px;
-    padding-left:10px;
-  }
+.footer .column-3 {
+  padding-top: 25px;
+  width: 25%;
+  align-items: flex-end;
+  padding-right: 30px;
+}
 
-.home input[type=text]:focus {
-    border: none;
-    background-color: none;
-    outline: 0;
-  }
-  
-.home .search-area{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-image: url("../src/star.jpg");
-    background-repeat: no-repeat;
-    height:60vh;
-    width: 100%;
-    background-size: cover;
-    align-items: center;
-    background-position: center;
+.footer .footer-content {
+  padding: 0px;
+  margin: 0px;
 }
-.home .search-bar{
-    background-color: white;
-    width:max-content;
-    border-radius: 5px;
 
+.footer .footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.home #heading{
-    margin:2px;
-    text-align: center;
+
+.footer .secondary-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  background-color: #3f72af;
+  color: white;
+  height: 40px;
 }
-.home .texts{
-    color:white
+
+.footer .heart {
+  margin-left: 3px;
+  margin-right: 3px;
 }
+
+.home input[type="text"] {
+  border: none;
+  background-color: none;
+  outline: 0;
+  font-size: 18px;
+  width: 270px;
+  padding-left: 10px;
+}
+
+.home input[type="text"]:focus {
+  border: none;
+  background-color: none;
+  outline: 0;
+}
+
+.home .search-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../src/star.jpg");
+  background-repeat: no-repeat;
+  height: 60vh;
+  width: 100%;
+  background-size: cover;
+  align-items: center;
+  background-position: center;
+}
+.home .search-bar {
+  background-color: white;
+  width: max-content;
+  border-radius: 5px;
+}
+.home #heading {
+  margin: 2px;
+  text-align: center;
+}
+.home .texts {
+  color: white;
+}
+
+/* User_Profile Start */
+
+.user_profile_page .user_header {
+  background-color: rgba(113, 101, 216, 0.76);
+  padding: 1.5rem;
+}
+
+.user_profile_page .user_footer {
+  background-color: rgba(113, 101, 216, 0.76);
+  padding: 3.5rem;
+}
+
+.user_profile_page .user_page {
+  display: flex;
+  margin: 2rem;
+  margin-left: 5rem;
+}
+
+.user_profile_page .college_info {
+  font-size: 1.5rem;
+}
+
+.user_profile_page .edit_info_btn {
+  border: none;
+  background-color: rgb(197, 197, 197);
+  padding: 0.75rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+}
+
+.user_profile_page .edit_info_btn:hover {
+  background-color: rgb(231, 229, 229);
+}
+
+.user_profile_page .user_contact {
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+  line-height: 2rem;
+}
+
+.user_profile_page .main_info {
+  margin: -10rem;
+  padding: 10rem;
+  padding-right: 0rem;
+  /* background-color: pink; */
+}
+
+.user_profile_page .college_info {
+  line-height: 2rem;
+  text-align: center;
+}
+
+.user_profile_page .vl {
+  border-left: 4px solid rgb(94, 94, 94);
+  margin-top: 1rem;
+  height: 45rem;
+  margin-right: 5rem;
+  margin-left: 5rem;
+}
+
+.user_profile_page .active_user_items {
+  margin-top: 3rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+
+.user_profile_page .list_active_user_items {
+  background-color: #d4d4d4;
+  padding-right: 15rem;
+  padding-left: 5rem;
+  /* padding-bottom: 2rem; */
+  margin: 1rem;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+}
+
+.user_profile_page .past_user_items {
+  margin-top: 3rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+
+.user_profile_page .list_past_user_items {
+  background-color: #d4d4d4;
+  padding-right: 15rem;
+  padding-left: 5rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+}
+
+/* User_Profie END */

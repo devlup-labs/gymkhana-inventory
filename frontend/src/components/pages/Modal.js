@@ -4,7 +4,7 @@ function Modal() {
     return (
 
         <div>
-            This is Modal Page
+            This is Modal Page ...
         </div>
 
     )

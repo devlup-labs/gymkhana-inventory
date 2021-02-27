@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
+import User from "./User/User.js";
 
 function UserProfile() {
     return (
 
         <div>
-            This is UserProfile Page
+            <User />
         </div>
 
     )
