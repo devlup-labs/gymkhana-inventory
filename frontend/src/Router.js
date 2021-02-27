@@ -8,13 +8,12 @@ import AdminProfile from './components/profiles/AdminProfile';
 const Router = () => {
     return (
         <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/profile" component={UserProfile}/>
-          <Route path="/adminprofile" component={AdminProfile}/>
-          {/* <Route path="/logout" component={Logout}/> */}
-          {/* <Route path="/notification" component={Notification}/> */}
-          <Route path="/itempage" component={ItemsPage}/>
-          
+            <Route path="/" exact component={Home} />
+            <Route path="/profile" component={UserProfile} />
+            <Route path="/adminprofile" component={AdminProfile} />
+            {/* <Route path="/logout" component={Logout}/> */}
+            {/* <Route path="/notification" component={Notification}/> */}
+            <Route path="/itempage" component={ItemsPage} />
         </Switch>
     );
 };
