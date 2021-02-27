@@ -67,8 +67,7 @@
   margin-left: 3px;
   margin-right: 3px;
 }
-
-.home input[type="text"] {
+.container .home input[type="text"] {
   border: none;
   background-color: none;
   outline: 0;
