@@ -1,4 +1,5 @@
-from .serializers import EquipmentSerializer
+from .serializers import EquipmentSerializer, SocietySerializer
+from django.shortcuts import render
 import json
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
@@ -69,3 +70,12 @@ def delete_equipment(request, id):
         return JsonResponse({'error': str(e)}, safe=False, status=status.HTTP_404_NOT_FOUND)
     except Exception:
         return JsonResponse({'error': 'Something went wrong'}, safe=False, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+@api_view(["GET"])
+@csrf_exempt
+def get_all_society(request):
+    #payload = json.loads(request.body)
+    all_society=Society.objects.all()
+    #equip = Equipment.objects.filter(societyname=society)
+    serializer = SocietySerializer(all_society, many=True)
+    return JsonResponse({'societies': serializer.data}, safe=False, status=status.HTTP_200_OK)
