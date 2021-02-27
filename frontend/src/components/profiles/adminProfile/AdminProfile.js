@@ -12,8 +12,8 @@ function AdminProfile(props) {
                 <Box className='adminHeader' >
                     <Avatar/>
                     <Box>
-                        <h2 style={{margin:'3px'}}>Club {props.clubName}</h2>
-                        <p style={{margin:'3px'}}>Email ID: {props.emailID}</p>
+                        <h2 style={{margin:'3px'}}>Club </h2>
+                        <p style={{margin:'3px'}}>Email ID:</p>
                     </Box>
                     
                 </Box>
@@ -42,7 +42,7 @@ function AdminProfile(props) {
         
                     </Box>
                     <Box className="adminBody">
-                        <p>Total items: {props.totalItems}</p>
+                        <p>Total items: </p>
                         <h3>Pending Requests</h3>
                                 <Item/>
                         <h3>Archive Transaction</h3>

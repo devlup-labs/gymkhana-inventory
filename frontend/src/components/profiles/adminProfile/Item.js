@@ -9,11 +9,11 @@ function Item (props) {
             <Box className='cards' style={{maxwidth: '18rem'}}>
                 <Box className="cardContent">
                     <Box>
-                        <p className="">Item Name: {props.itemName}</p>
-                        <p className="">ID: {props.itemId}</p>
+                        <p>Item Name: </p>
+                        <p>ID: </p>
                     </Box>
-                    <p className="">Requesting Date: {props.requestingDate}</p>
-                    <p className="">Due Date: {props.dueDate}</p>
+                    <p>Requesting Date: </p>
+                    <p>Due Date: </p>
                 </Box>
                 {isClicked===true?(<Box className='buttonAdmin'>
                     <Button variant="contained" color="primary">Approve</Button>
@@ -22,9 +22,9 @@ function Item (props) {
                 
                 <Box className="cardContent">
     
-                    <p className="">Request Name: {props.requestaName}</p>
-                    <p className="">Email ID: {props.emailID}</p>
-                    <p className="">Contact NO.: {props.contact}</p>
+                    <p>Request Name: </p>
+                    <p>Email ID: </p>
+                    <p>Contact NO.: </p>
                 </Box>  
                 
             </Box>
