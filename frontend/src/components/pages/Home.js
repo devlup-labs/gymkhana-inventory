@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
         <div className="search-area">
           <div className="texts">
             <h2 id="heading">Search for Equipments</h2>
-            <p>Cameras, Microphone, camcoders everything at on place</p>
+            <p>Everything at one place</p>
           </div>
           <div className="search-bar">
             <form>
