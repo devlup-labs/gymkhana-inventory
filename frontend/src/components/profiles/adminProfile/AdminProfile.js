@@ -6,6 +6,62 @@ import classes from'@material-ui/icons/Class'
 
 function AdminProfile(props) {
     var isManageAcsess=true;
+    const data = {
+        items:[
+            {
+                itemId:'id1',
+                itemName:'a',
+                requestingDate:'dd-mm-yy',
+                dueDate:'dd-mm-yy',
+                contact:'1234556788',
+                requestaName:'qwe',
+                emailID:'a@iitj.ac.in'
+                
+            },
+            {
+                itemId:'id2',
+                itemName:'abc',
+                requestingDate:'dd-mm-yy',
+                dueDate:'dd-mm-yy',
+                contact:'1234556788',
+                requestaName:'qwe',
+                emailID:'a@iitj.ac.in'
+                
+            },
+            {
+                itemId:'id3',
+                itemName:'abc',
+                requestingDate:'dd-mm-yy',
+                dueDate:'dd-mm-yy',
+                contact:'1234556788',
+                requestaName:'qwe',
+                emailID:'a@iitj.ac.in'
+                
+            },
+        ],
+        manage:[
+            {
+                name: 'abc',
+                email:'anc@iitj.ac.in',
+                role: 'assigner'
+            },
+            {
+                name: 'ac',
+                email:'anc@iitj.ac.in',
+                role: 'assigner'
+            },
+            {
+                name: 'ab',
+                email:'anc@iitj.ac.in',
+                role: 'assigner'
+            },
+            {
+                name: 'abc',
+                email:'anc@iitj.ac.in',
+                role: 'assigner'
+            }
+        ]
+    }
         return (
             <Box className='admin'>
                 <Box className='adminHeader' >
@@ -27,11 +83,11 @@ function AdminProfile(props) {
                             <TextField id="outlined-basic" label="Role" />
                             <Button className={classes.root} variant="contained" style={{backgroundColor:'#112d4e' , color:'white',margin:'8px'}}>Add</Button>                            
                         </form>
-                        <ManageAccess/>
-                        <ManageAccess/>
-                        <ManageAccess/>
-                        <ManageAccess/>
-                        <ManageAccess/>
+                        {data.manage.map((card)=>{
+                            return (
+                                <ManageAccess name={card.name} email={card.email} role={card.role}/>
+                            );
+                        })}
                     </Box>
                     ):null}
                     
@@ -42,15 +98,47 @@ function AdminProfile(props) {
                     <Box className="adminBody">
                         <p>Total items: </p>
                         <h3>Pending Requests</h3>
-                                <Item/>
+                                {data.items.map((card)=>{
+                            return (
+                                <Item 
+                                itemId={card.itemId} 
+                                itemName={card.itemName} 
+                                requestingDate={card.requestingDate} 
+                                dueDate={card.dueDate}
+                                emailID={card.emailID}
+                                requestaName={card.requestaName}
+                                contact={card.contact}/> 
+                            );
+                        })}
                         <h3>Archive Transaction</h3>
-                                <Item/>
+                                {data.items.map((card)=>{
+                            return (
+                                <Item 
+                                itemId={card.itemId} 
+                                itemName={card.itemName} 
+                                requestingDate={card.requestingDate} 
+                                dueDate={card.dueDate}
+                                emailID={card.emailID}
+                                requestaName={card.requestaName}
+                                contact={card.contact}/> 
+                            );
+                        })}
                         
                         <h3>Transaction History</h3>  
                         <Box >
-                            <Item/>
-                            <Item/>
-                            <Item/>
+                        {data.items.map((card)=>{
+                            return (
+                                <Item 
+                                itemId={card.itemId} 
+                                itemName={card.itemName} 
+                                requestingDate={card.requestingDate} 
+                                dueDate={card.dueDate}
+                                emailID={card.emailID}
+                                requestaName={card.requestaName}
+                                contact={card.contact}/> 
+                            );
+                        })}
+                            
                         </Box>
                     </Box>
                 </Box>
