@@ -1,7 +1,7 @@
 import React from 'react'
 import {Box } from '@material-ui/core'
 import { Delete }from '@material-ui/icons'
-import '../../App.css'
+
 
 function ManageAccess(props) {
     return (

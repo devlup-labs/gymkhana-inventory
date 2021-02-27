@@ -1,7 +1,6 @@
 import React from 'react'
 import Item from './Item'
 import { Avatar,Box,Button,TextField } from '@material-ui/core'
-import '../../App.css'
 import ManageAccess from './ManageAccess'
 import classes from'@material-ui/icons/Class'
 
