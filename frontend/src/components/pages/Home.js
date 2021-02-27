@@ -20,7 +20,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom:"3px"
     },
   Gridcontainer:{
-    marginTop:"5px"
+    marginTop:"5px",
+    padding:"5px"
   }  
 
   }
@@ -60,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
         <div className="search-area">
           <div className="texts">
             <h2 id="heading">Search for Equipments</h2>
-            <p>Cameras, Microphone, camcoders everything at on place</p>
+            <p>Everything at one place</p>
           </div>
           <div className="search-bar">
             <form>
@@ -71,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
           </form>
           </div>\
           </div>
-          <Grid container spacing={3}>
+          <Grid container>
          {data.map(item => {
             return (
               <Grid item xs={12} sm={6} md={3} className={classes.Gridcontainer}>
