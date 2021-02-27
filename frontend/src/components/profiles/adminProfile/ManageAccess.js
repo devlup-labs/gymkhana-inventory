@@ -6,9 +6,9 @@ import { Delete }from '@material-ui/icons'
 function ManageAccess(props) {
     return (
         <Box className="cardContent">
-            <p>Name: </p>
-            <p>Email: </p>
-            <p>Role: </p>
+            <p>Name: AB</p>
+            <p>Email: ab@iitj</p>
+            <p>Role: assigner</p>
             <Delete/>
         </Box>
     )
