@@ -1,7 +1,4 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Navbar from "./components/navbar/index";
-import ItemPage from "./components/pages/ItemPage";
 import PrimarySearchAppBar from "./components/navbar";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";

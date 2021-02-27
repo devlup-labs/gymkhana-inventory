@@ -1,11 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.Itemname {
-  text-align: left;
-}
-
 .container {
   width: 100%;
 }
@@ -49,19 +41,6 @@
   padding-left: 5px;
 }
 
-.footer p {
-  margin-top: 5px;
-}
-
-.home input[type="text"] {
-  border: none;
-  background-color: none;
-  outline: 0;
-  font-size: 18px;
-  width: 270px;
-  padding-left: 10px;
-}
-
 .footer .footer-content {
   padding: 0px;
   margin: 0px;
@@ -73,8 +52,11 @@
   padding: 0;
 }
 
+.footer p {
+  margin-top: 5px;
+}
+
 .footer .secondary-footer {
-  display: flex;
   justify-content: center;
   padding-top: 10px;
   background-color: #3f72af;
@@ -86,7 +68,8 @@
   margin-left: 3px;
   margin-right: 3px;
 }
-.container .home input[type="text"] {
+
+.home input[type="text"] {
   border: none;
   background-color: none;
   outline: 0;
@@ -121,9 +104,6 @@
 .home #heading {
   margin: 2px;
   text-align: center;
-}
-.home .texts {
-  color: white;
 }
 .home .texts {
   color: white;
