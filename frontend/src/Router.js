@@ -1,10 +1,9 @@
-import React from 'react'
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
 import UserProfile from './components/profiles/UserProfile';
 import ItemsPage from './components/pages/ItemsPage';
 import AdminProfile from './components/profiles/AdminProfile';
-
 
 const Router = () => {
     return (
@@ -17,7 +16,7 @@ const Router = () => {
           <Route path="/itempage" component={ItemsPage}/>
           
         </Switch>
-    )
-}
+    );
+};
 
-export default Router
+export default Router;

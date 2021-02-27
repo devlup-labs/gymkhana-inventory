@@ -4,6 +4,7 @@ import { Avatar,Box,Button,TextField } from '@material-ui/core'
 import ManageAccess from './ManageAccess'
 import classes from'@material-ui/icons/Class'
 
+
 function AdminProfile(props) {
     var isManageAcsess=true;
         return (
@@ -85,3 +86,4 @@ function AdminProfile(props) {
   
 
 export default AdminProfile
+
