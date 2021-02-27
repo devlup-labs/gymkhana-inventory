@@ -1,6 +1,4 @@
-import React from "react";
-// import User from "./User/User.js";
-import "../../App.css";
+import React from 'react';
 
 function UserProfile() {
     return (
@@ -32,17 +30,17 @@ function UserProfile() {
                     <div className="active_user_items">
                         <p>Active</p>
                         <div className="list_active_user_items">
-                            <pre className="tab">Item_name               Issue_date:             Return_date:              Due_date: </pre>
+                            <pre className="tab">Item_name Issue_date: Return_date: Due_date: </pre>
                         </div>
                         <div className="list_active_user_items">
-                            <pre className="tab">Item_name               Issue_date:             Return_date:              Due_date: </pre>
+                            <pre className="tab">Item_name Issue_date: Return_date: Due_date: </pre>
                         </div>
                         <div className="list_active_user_items">
-                            <pre className="tab">Item_name               Issue_date:             Return_date:              Due_date: </pre>
+                            <pre className="tab">Item_name Issue_date: Return_date: Due_date: </pre>
                         </div>
                         <div className="list_active_user_items">
                             {/* <p>Text</p> */}
-                            <pre className="tab">Item_name               Issue_date:             Return_date:              Due_date: </pre>
+                            <pre className="tab">Item_name Issue_date: Return_date: Due_date: </pre>
                         </div>
                     </div>
 
@@ -50,17 +48,17 @@ function UserProfile() {
                         <p>Past History</p>
                         {/* <div className="list_past_user_items"> */}
                         <div className="list_active_user_items">
-                            <pre className="tab">Item_name               Issue_date:             Return_date:              Due_date: </pre>
+                            <pre className="tab">Item_name Issue_date: Return_date: Due_date: </pre>
                         </div>
                         <div className="list_active_user_items">
-                            <pre className="tab">Item_name               Issue_date:             Return_date:              Due_date: </pre>
+                            <pre className="tab">Item_name Issue_date: Return_date: Due_date: </pre>
                         </div>
                         <div className="list_active_user_items">
-                            <pre className="tab">Item_name               Issue_date:             Return_date:              Due_date: </pre>
+                            <pre className="tab">Item_name Issue_date: Return_date: Due_date: </pre>
                         </div>
                         <div className="list_active_user_items">
                             {/* <p>Text</p> */}
-                            <pre className="tab">Item_name               Issue_date:             Return_date:              Due_date: </pre>
+                            <pre className="tab">Item_name Issue_date: Return_date: Due_date: </pre>
                         </div>
                     </div>
                 </div>
