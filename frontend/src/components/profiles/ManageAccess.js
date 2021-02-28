@@ -8,6 +8,7 @@ function ManageAccess(props) {
             <p>Name: {this.props.name}</p>
             <p>Email: {this.props.email}</p>
             <p>Role: {this.props.role}</p>
+
             <Delete />
         </Box>
     );
