@@ -56,6 +56,7 @@ function AdminProfile(props) {
                 </Box>
                 <Box className="adminBody">
                     <p>Total items: {this.props.totalItems}</p>
+
                     <h3>Pending Requests</h3>
                     <Item />
                     <h3>Archive Transaction</h3>
