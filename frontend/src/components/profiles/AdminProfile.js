@@ -6,6 +6,7 @@ import classes from '@material-ui/icons/Class';
 
 function AdminProfile(props) {
     const isManageAcsess = true;
+
     return (
         <Box className="admin">
             <Box className="adminHeader">
@@ -56,6 +57,7 @@ function AdminProfile(props) {
                 </Box>
                 <Box className="adminBody">
                     <p>Total items: {this.props.totalItems}</p>
+
                     <h3>Pending Requests</h3>
                     <Item />
                     <h3>Archive Transaction</h3>
