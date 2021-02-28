@@ -11,6 +11,12 @@ _General Instructions_
 - Check for conflicts
 - Start Coding
 
+Important Scripts to be run before any commit for a contributor :
+
+For formatting the code run ```npm run format```
+For analyzing lint-errors run ```npm run lint```
+For fixing lint-errors that are autofixable run ```npm run lint-fix```
+
 Happy Coding
 
 ##Gymkhana Inventory Reports
