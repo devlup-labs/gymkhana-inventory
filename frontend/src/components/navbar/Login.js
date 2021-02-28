@@ -24,7 +24,7 @@ class GoogleSocialAuth extends Component {
                 <GoogleLogin
                     clientId="977939251531-chonan52l45f0u2um7hq6tr1vu8r5fsd.apps.googleusercontent.com"
                     render={(renderProps) => (
-                        <Button variant="contained" color="primary" onClick={renderProps.onClick}>
+                        <Button variant="contained" color="secondary" onClick={renderProps.onClick}>
                             LogIn
                         </Button>
                     )}
