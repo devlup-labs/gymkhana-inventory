@@ -29,7 +29,7 @@ class Equipment_issued(models.Model):
     societyname = models.ForeignKey(Society,on_delete=models.CASCADE)
     issuedate = models.DateTimeField(default=datetime.now,blank=True)
     returndate = models.DateTimeField(default=datetime.now,blank=True)
-    borrower = models.OneToOneField(Borrower,on_delete=models.CASCADE)
+    borrower = models.ForeignKey(Borrower,on_delete=models.CASCADE)
     isapproved = models.BooleanField(default=False)
 
     def __str__(self):
