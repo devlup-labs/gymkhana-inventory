@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
 .container {
   width: 100%;
 }
@@ -11,14 +13,11 @@
   min-height: 80vh;
 }
 
-.footer .main-footer {
-  display: flex;
+.footer .main-footer{
   justify-content: space-around;
-  color: black;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 10px;
-  background-color: #dbe2ef;
+  color:black;
+  padding:0;
+  background-color:#dbe2ef;
 }
 
 .footer .column-1 {
@@ -26,15 +25,26 @@
   padding-left: 30px;
   width: 25%;
 }
-/* .column-2{
- } */
-.footer .column-3 {
-  padding-top: 25px;
-  width: 25%;
-  align-items: flex-end;
-  padding-right: 30px;
+.footer .column-1{
+  padding-top:20px;
+  padding-left:70px;
 }
-
+.footer .column-2 {
+  display: flex;
+  justify-content: center;
+}
+.footer .column-2 #logo-image{
+  max-width: 100%;
+  height: auto;
+  max-height: 170px;
+  padding-top: 15px;
+}
+.footer .column-3{
+  padding-top: 20px;
+  text-align:end;
+  padding-right: 45px;
+  padding-left: 5px;
+}
 .footer .footer-content {
   padding: 0px;
   margin: 0px;
@@ -46,13 +56,15 @@
   padding: 0;
 }
 
-.footer .secondary-footer {
-  display: flex;
+.footer p{
+  margin-top: 5px;
+}
+.footer .secondary-footer{
   justify-content: center;
   padding-top: 10px;
   background-color: #3f72af;
   color: white;
-  height: 40px;
+  height:40px;
 }
 
 .footer .heart {
@@ -98,8 +110,62 @@
 }
 .home .texts {
   color: white;
+  text-align: center;
+}
+.home .sep {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: purple;
+  width: 40%;
+  border-radius: 0px 25px 25px 0px;
+  color: white;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.home .sep2{
+  margin-left: auto; 
+  margin-right: 0;
+  border-radius: 25px 0px 0px 25px;
+}
+.home .separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 30px;
 }
 
+.home .separator::before,
+.home .separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #000;
+}
+
+.home .separator:not(:empty)::before {
+  margin-right: 0.25em;
+}
+
+.home .separator:not(:empty)::after {
+  margin-left: 0.25em;
+}
+.home .septext {
+  background-color: rgb(65, 65, 250);
+  color: white;
+  border-radius: 15px;
+  padding:5px 40px 5px 40px;
+}
+.home .quotes{
+  margin: 80px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.home .rules{
+  font-family: 'Montserrat', sans-serif;
+  margin: 40px;
+}
 .admin {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
@@ -155,4 +221,16 @@
 .buttonAdmin > .MuiButtonBase-root {
   margin: 4px;
   background-color: #112d4e;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer .column-1{
+      text-align: center;
+      padding: 0;
+      padding-bottom: 10px;
+  }
+  .footer .column-3{
+      text-align: center;
+      padding:0;
+  }
 }
