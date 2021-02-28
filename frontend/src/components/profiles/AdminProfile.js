@@ -5,7 +5,6 @@ import ManageAccess from './ManageAccess';
 import classes from '@material-ui/icons/Class';
 
 function AdminProfile(props) {
-
     const isManageAcsess = true;
 
     return (
@@ -13,7 +12,6 @@ function AdminProfile(props) {
             <Box className="adminHeader">
                 <Avatar />
                 <Box>
-
                     <h2 style={{ margin: '3px' }}>Club {this.props.clubName}</h2>
                     <p style={{ margin: '3px' }}>Email ID: {this.props.emailID}</p>
                 </Box>
@@ -58,7 +56,6 @@ function AdminProfile(props) {
                     </Button>
                 </Box>
                 <Box className="adminBody">
-
                     <p>Total items: {this.props.totalItems}</p>
 
                     <h3>Pending Requests</h3>
