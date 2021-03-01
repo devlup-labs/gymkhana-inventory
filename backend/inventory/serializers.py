@@ -15,4 +15,4 @@ class EquipmentSerializer(serializers.ModelSerializer):
 class Equipment_issued(serializers.ModelSerializer):
     class Meta:
         model = Equipment_issued
-        fields = ['id', 'name', 'societyname', 'issuedate', 'returndate', 'borrower', 'isapproved']
+        fields = ['id', 'equipment', 'issuedate', 'returndate', 'borrower', 'isapproved']
