@@ -34,7 +34,7 @@ export default function ButtonAppBar() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
     const classes = useStyles();
-    var isLoggedIn = false;
+    const isLoggedIn = false;
     return (
         <div className={classes.root}>
             <AppBar position="static" color="primary">

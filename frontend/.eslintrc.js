@@ -24,7 +24,7 @@ module.exports = {
     plugins: ['react'],
     rules: {
         'react/react-in-jsx-scope': 'off',
-        'prettier/prettier': ['error', {}, { usePrettierrc: true }] // Use our .prettierrc file as source
+        'prettier/prettier': ['error', { endOfLine: 'auto' }, { usePrettierrc: true }] // Use our .prettierrc file as source
     },
     overrides: [
         {

@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
 import UserProfile from './components/profiles/UserProfile';
 import ItemsPage from './components/pages/ItemsPage';
-import AdminProfile from './components/profiles/AdminProfile';
+import AdminProfile from './components/profiles/adminProfile/AdminProfile';
 
 const Router = () => {
     return (
