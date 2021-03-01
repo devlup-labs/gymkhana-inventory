@@ -6,6 +6,7 @@ import classes from '@material-ui/icons/Class';
 
 function AdminProfile(props) {
     const isManageAcsess = true;
+
     return (
         <Box className="admin">
             <Box className="adminHeader">

@@ -3,6 +3,7 @@ import { Box, Button } from '@material-ui/core';
 
 function Item(props) {
     const isClicked = true;
+
     return (
         <Box className="cards" style={{ maxwidth: '18rem' }}>
             <Box className="cardContent">
