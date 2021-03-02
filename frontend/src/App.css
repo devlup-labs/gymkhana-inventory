@@ -100,17 +100,17 @@
   font-family: 'Open Sans', sans-serif;
  }
 
-.home input[type='text'] {
+.home input[type='text'] #search-input{
     border: none;
     background-color: none;
     outline: 0;
     font-size: 18px;
-    width: 270px;
     padding-left: 10px;
+    margin:auto;
     font-family: 'Roboto', sans-serif;
 }
 
-.home input[type='text']:focus {
+.home input[type='text']:focus #seach-input{
     border: none;
     background-color: none;
     outline: 0;
@@ -129,9 +129,11 @@
     background-position: center;
 }
 .home .search-bar {
+  display: flex;
     background-color: white;
-    width: max-content;
+    min-width: max-content;
     border-radius: 5px;
+    width:270px;
 }
 .home #heading {
     margin: 2px;
@@ -214,6 +216,101 @@
 .home h3{
   font-family: 'Open Sans', sans-serif;
 }
+.forms {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  text-align: left;
+  padding: 10px 0px 10px 20px;
+}
+.labels {
+  width: 10%;
+  min-width: max-content;
+  padding: 5px;
+}
+.field {
+  width: 30%;
+}
+input{
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0.5px 1px #888888;
+  padding: 5px;
+}
+input::placeholder{
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+}
+textarea::placeholder{
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+}
+textarea {
+  width: 350px;
+  height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0.5px 1px #888888;
+  padding: 5px;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+.button {
+  padding: 25px;
+  margin: auto;
+}
+.question {
+  padding-left: 5px;
+  width: 53%;
+}
+.equipment {
+  display: flex;
+  align-items: center;
+}
+.form-container {
+  margin: 100px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 600px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0px 10px 0;
+    resize: vertical;
+  }
+  .labels {
+    text-align: center;
+  }
+  .field {
+    width: 100%;
+  }
+  .form-container {
+    margin: 20px;
+  }
+  textarea {
+    width: 100%;
+  }
+  .question {
+    text-align: center;
+    width: 100%;
+  }
+}
+
 .admin {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
