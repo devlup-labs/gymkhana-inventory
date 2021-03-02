@@ -64,7 +64,7 @@ function ItemsPage() {
                         DESCRIPTION : <p className={classes.heading4}>{data.Description} </p>
                     </h4>
                     {viewer === 'user' ? (
-                        available === 'yes' ? (
+                        available === 'YES' ? (
                             <div className={classes.button}>
                                 <Button
                                     variant="contained"
@@ -99,31 +99,3 @@ function ItemsPage() {
 }
 
 export default ItemsPage;
-// {
-/* <Grid container spacing={3}>
-                        {viewer ? (
-                            <Grid item xs={4} className={classes.button}>
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    href="#contained-buttons">
-                                    MAKE REQUEST
-                                </Button>
-                            </Grid>
-                        ) : (
-                            <Grid item xs={4} className={classes.button}>
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    href="#contained-buttons">
-                                    EDIT EQUIPMENT DETAILS
-                                </Button>
-                            </Grid>
-                        )}
-                        <Grid item xs={4} className={classes.button}>
-                            <Button variant="contained" color="primary" href="#contained-buttons">
-                                NOTIFY WHEN AVAILABLE
-                            </Button>
-                        </Grid>
-                    </Grid> */
-// }
