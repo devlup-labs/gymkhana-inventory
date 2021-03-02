@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import IITJ from '../../IITJ.png';
 import { Link } from 'react-router-dom';
+import SendIcon from '@material-ui/icons/Send';
 
 const useStyles = makeStyles((theme) => ({
     Searchbutton: {
@@ -62,17 +63,23 @@ function Home() {
                     <h2 id="heading">Search for Equipments</h2>
                     <p>Everything at one place</p>
                 </div>
-                <div className="search-bar">
-                    <form>
-                        <input className="bar" type="text" placeholder="Search for equipments" />
+
+                <form>
+                    <div className="search-bar">
+                        <input
+                            className="bar"
+                            type="text"
+                            id="search-input"
+                            placeholder="Search for equipments"
+                        />
                         <IconButton
                             type="submit"
                             aria-label="search"
                             className={classes.Searchbutton}>
                             <SearchIcon />
                         </IconButton>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
             <div className="sep">
                 <i>Every moment is a fresh beginning. – T.S Eliot</i>
@@ -178,6 +185,60 @@ function Home() {
             </div>
             <div className="sep sep2">
                 <i>Write your query</i>
+            </div>
+            <div className="form-container">
+                <form className="forms">
+                    <div className="row">
+                        <div className="labels">
+                            <label htmlFor="name">Name :</label>
+                        </div>
+                        <div className="field">
+                            <input type="text" id="name" placeholder="Enter your name" />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="labels">
+                            <label htmlFor="email">Email :</label>
+                        </div>
+                        <div className="field">
+                            <input type="email" id="email" placeholder="Enter your Email" />
+                        </div>
+                    </div>
+                    <div className="row equipment">
+                        {/* <p className="text">
+              Is your query related to a particular equipment{" "}
+            </p> */}
+                        <div className="question">
+                            If your query related to a particular equipment
+                        </div>
+                        <div className="labels">
+                            <label htmlFor="equipment-id">Equipment Id :</label>
+                        </div>
+                        <div className="field">
+                            <input type="text" id="equipment-id" placeholder="Enter ID" />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="labels">
+                            <label htmlFor="description">Description :</label>
+                        </div>
+                        <div className="field">
+                            <textarea
+                                id="description"
+                                name="subject"
+                                placeholder="Enter your query"></textarea>
+                        </div>
+                    </div>
+                    <div className="row button">
+                        <Button
+                            variant="contained"
+                            type="submit"
+                            color="primary"
+                            startIcon={<SendIcon />}>
+                            Send
+                        </Button>
+                    </div>
+                </form>
             </div>
         </div>
     );
