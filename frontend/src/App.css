@@ -24,9 +24,9 @@
 }
 .footer .main-footer{
   justify-content: space-around;
-  color:black;
+  color:white;
   padding:0;
-  background-color:#dbe2ef;
+  background-color:#148FD3;
 }
 
 .footer .column-1 {
@@ -79,8 +79,8 @@
 .footer .secondary-footer{
   justify-content: center;
   padding-top: 10px;
-  background-color: #3f72af;
-  color: white;
+  background-color: #ffffff;
+  color: black;
   height:40px;
 }
 
@@ -88,7 +88,10 @@
     margin-left: 3px;
     margin-right: 3px;
 }
-
+.home .Grid-container{
+  width:85%;
+  margin:auto;
+}
 .home .MuiTypography-body2{
    font-family: 'Roboto', sans-serif;
  }
@@ -144,7 +147,7 @@
 .home .sep {
   margin-top: 40px;
   margin-bottom: 40px;
-  background-color: purple;
+  background-color: #148FD3;
   width: 40%;
   border-radius: 0px 25px 25px 0px;
   color: white;
@@ -162,9 +165,12 @@
   display: flex;
   align-items: center;
   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 30px;
+  margin: auto;
+  /* margin-bottom: 30px; */
   font-family: 'Open Sans', 'sans-serif';
+  padding:100px 28px 30px 28px;
+  width:85%;
+
 }
 
 .home .separator::before,
@@ -182,20 +188,28 @@
   margin-left: 0.25em;
 }
 .home .septext {
-  background-color: rgb(65, 65, 250);
+  background-color: #148FD3;
   color: white;
   border-radius: 15px;
   padding:5px 40px 5px 40px;
 }
 .home .quotes{
-  margin: 80px;
+  margin: 120px 100px 150px 100px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  color: #000000;
+  opacity: 57%;
 }
 
 .home .rules{
   font-family: 'Roboto', sans-serif;
-  margin: 40px;
+  margin:  auto;
+  width:75%;
+}
+.home .rules #lorem{
+  padding:30px 0px 0px 40px;
+  text-align: left;
+  margin-bottom: 200px;
 }
 .home h3{
   font-family: 'Open Sans', sans-serif;
