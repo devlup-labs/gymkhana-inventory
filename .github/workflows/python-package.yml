@@ -37,4 +37,5 @@ jobs:
     - name: Check Python Errors
       run: |
         # pytest
+        cd backend
         python manage.py makemigrations
