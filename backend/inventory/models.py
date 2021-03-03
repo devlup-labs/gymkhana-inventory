@@ -1,6 +1,6 @@
 from django.db import models
 from accounts.models import Borrower
-from datetime import datetime    
+from datetime import datetime
 
 # Create your models here.
 
@@ -25,12 +25,12 @@ class Equipment(models.Model):
 
 
 class Equipment_issued(models.Model):
-    #name=models.CharField(max_length=200)
-    #societyname=models.ForeignKey(Society,on_delete=models.CASCADE)
-    equipment = models.ForeignKey(Equipment,on_delete=models.CASCADE,null=True) 
-    issuedate = models.DateTimeField(default=datetime.now,blank=True)
-    returndate = models.DateTimeField(default=datetime.now,blank=True)
-    borrower = models.ForeignKey(Borrower,on_delete=models.CASCADE)
+    # name=models.CharField(max_length=200)
+    # societyname=models.ForeignKey(Society,on_delete=models.CASCADE)
+    equipment = models.ForeignKey(Equipment, on_delete=models.CASCADE, null=True)
+    issuedate = models.DateTimeField(default=datetime.now, blank=True)
+    returndate = models.DateTimeField(default=datetime.now, blank=True)
+    borrower = models.ForeignKey(Borrower, on_delete=models.CASCADE)
     isapproved = models.BooleanField(default=False)
 
     def __str__(self):
