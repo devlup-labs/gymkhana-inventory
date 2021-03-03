@@ -10,7 +10,8 @@ To make contributions to this repo, check out [contribution.md](contribution.md)
 3. Open up your IDE.
 4. Create a virtual environment and activate it. (For windows use following code)<br/>
 `python -m venv myenv`<br/>
-`myenv\Scripts\activate`<br/>
+`myenv\Scripts\activate` (for windows)<br/>
+`source env/bin/activate` (for mac)
 5. Go to backend folder and install all the required libraries in terminal.<br/>
 `cd backend`<br/>
 `pip install -r requirements.txt`
