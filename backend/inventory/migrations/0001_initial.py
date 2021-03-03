@@ -8,27 +8,48 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Society',
+            name="Society",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=200)),
-                ('mailid', models.EmailField(max_length=100)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=200)),
+                ("mailid", models.EmailField(max_length=100)),
             ],
         ),
         migrations.CreateModel(
-            name='Equipment',
+            name="Equipment",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=200)),
-                ('description', models.CharField(blank=True, max_length=300)),
-                ('quantity', models.IntegerField(default=1)),
-                ('numavail', models.IntegerField(default=1)),
-                ('societyname', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='inventory.society')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=200)),
+                ("description", models.CharField(blank=True, max_length=300)),
+                ("quantity", models.IntegerField(default=1)),
+                ("numavail", models.IntegerField(default=1)),
+                (
+                    "societyname",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="inventory.society",
+                    ),
+                ),
             ],
         ),
     ]
