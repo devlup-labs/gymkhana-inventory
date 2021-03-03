@@ -11,7 +11,7 @@ WebApp to manage Gymkhana Inventory
 `cd backend`<br/>
 `pip install -r requirements.txt`
 5. Now migrate the models.<br/>
-`python manage.py makemigrations`
+`python manage.py makemigrations`<br/>
 `python manage.py migrate`
 6. Create the superuser(Admin).<br/>
 `python manage.py createsuperuser`
