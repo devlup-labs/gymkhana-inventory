@@ -1,5 +1,4 @@
 import React from 'react';
-import './../../App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import camera from './../../camera.jpg';
@@ -25,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
 
 function ItemsPage() {
     const classes = useStyles();
-    const viewer = 'user';
-    const available = 'YES';
+    const viewerUser = true;
+    const available = true;
     const data = {
         nameOfEquipment: 'NAME OF EQUIPMENT',
         equipmentId: 'd4f8j9',
@@ -59,12 +58,17 @@ function ItemsPage() {
                     <h4>
                         Total Quantity : <p className={classes.heading4}>{data.quantity}</p>
                     </h4>
-                    <h3>AVAILABLE : {available}</h3>
+                    {available ? (
+                        <h3 style={{ color: 'green' }}>AVAILABLE : YES</h3>
+                    ) : (
+                        <h3 style={{ color: 'red' }}>AVAILABLE : NO</h3>
+                    )}
+
                     <h4>
                         DESCRIPTION : <p className={classes.heading4}>{data.Description} </p>
                     </h4>
-                    {viewer === 'user' ? (
-                        available === 'YES' ? (
+                    {viewerUser ? (
+                        available ? (
                             <div className={classes.button}>
                                 <Button
                                     variant="contained"
