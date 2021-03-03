@@ -1,5 +1,4 @@
-from django.shortcuts import render
-
+# from django.shortcuts import render
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from rest_auth.registration.views import SocialLoginView
 from rest_framework.views import APIView
@@ -18,7 +17,7 @@ class EditUserProfile(APIView):
 
     def post(self, request, *args, **kwargs):
 
-        dic = request.data['data']['profileObj']
+        # dic = request.data['data']['profileObj']
         mail = request.data['data']['profileObj']['email']
         user = User.objects.filter(email=mail)
 
