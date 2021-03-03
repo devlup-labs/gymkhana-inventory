@@ -3,18 +3,19 @@ WebApp to manage Gymkhana Inventory
 
 
 ## Project Setup
-1. Clone this repository.
+1. Clone this repository.<br/>
+`git clone https://github.com/devlup-labs/gymkhana-inventory.git`
 2. Make sure Python and pip are installed else install it.
 3. Open up your IDE.
-4. Go to backend folder and install all the required libraries in terminal.\
-`cd backend`\
+4. Go to backend folder and install all the required libraries in terminal.<br/>
+`cd backend`<br/>
 `pip install -r requirements.txt`
-5. Now migrate the models.\
+5. Now migrate the models.<br/>
 `python manage.py makemigrations`
 `python manage.py migrate`
-6. Create the superuser(Admin).\
+6. Create the superuser(Admin).<br/>
 `python manage.py createsuperuser`
-7. Type in following command to run project locally now at http://127.0.0.1:8000/\
+7. Type in following command to run project locally now at http://127.0.0.1:8000/<br/>
 `python manage.py runserver`
 
 ## Built with
