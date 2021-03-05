@@ -63,10 +63,13 @@ function Home() {
                     <h2 id="heading">Search for Equipments</h2>
                     <p>Everything at one place</p>
                 </div>
+
                 <div className="search-bar">
                     <form>
                         <input className="bar" type="text" placeholder="Search for equipments" />
                         <IconButton
+                            component={Link}
+                            to="/SearchPage"
                             type="submit"
                             aria-label="search"
                             className={classes.Searchbutton}>
@@ -74,7 +77,9 @@ function Home() {
                         </IconButton>
                     </form>
                 </div>
-                \
+            </div>
+            <div className="sep">
+                <i>Every moment is a fresh beginning. – T.S Eliot</i>
             </div>
             <Grid container>
                 {data.map((item) => {
@@ -124,6 +129,39 @@ function Home() {
                     );
                 })}
             </Grid>
+            <div className="separator">
+                <div className="septext">View more</div>
+            </div>
+            <div className="quotes">
+                <h3>
+                    <i>“Believe you can and you’re halfway there.” -Theodore Roosevelt</i>
+                </h3>
+            </div>
+            <div className="rules">
+                <h3>Rules to Follow</h3>
+                <p>
+                    <i>
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                        roots in a piece of classical Latin literature from 45 BC, making it over
+                        2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
+                        College in Virginia, looked up one of the more obscure Latin words,
+                        consectetur, from a Lorem Ipsum passage, and going through the cites of the
+                        word in classical literature, discovered the undoubtable source. Lorem Ipsum
+                        comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum
+                        (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
+                        treatise on the theory of ethics, very popular during the Renaissance. The
+                        first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line
+                        in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s
+                        is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from
+                        de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact
+                        original form, accompanied by English versions from the 1914 translation by
+                        H. Rackham.
+                    </i>
+                </p>
+            </div>
+            <div className="sep sep2">
+                <i>Write your query</i>
+            </div>
         </div>
     );
 }

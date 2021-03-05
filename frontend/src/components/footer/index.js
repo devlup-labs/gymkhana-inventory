@@ -27,7 +27,7 @@ const Footer = () => {
                     <span className="heart">
                         <FavoriteIcon />
                     </span>{' '}
-                    by DevlUp Labs.
+                    by Devlup Labs.
                 </Grid>
             </Grid>
         </Grid>
