@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Borrower,SocietyAdmin
+from .models import Borrower, SocietyAdmin
 # Register your models here.
 
 admin.site.register(Borrower)

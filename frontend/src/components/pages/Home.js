@@ -73,6 +73,8 @@ function Home() {
                             placeholder="Search for equipments"
                         />
                         <IconButton
+                            component={Link}
+                            to="/SearchPage"
                             type="submit"
                             aria-label="search"
                             className={classes.Searchbutton}>
