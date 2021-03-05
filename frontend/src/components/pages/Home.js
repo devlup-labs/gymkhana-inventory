@@ -63,10 +63,13 @@ function Home() {
                     <h2 id="heading">Search for Equipments</h2>
                     <p>Everything at one place</p>
                 </div>
+
                 <div className="search-bar">
                     <form>
                         <input className="bar" type="text" placeholder="Search for equipments" />
                         <IconButton
+                            component={Link}
+                            to="/SearchPage"
                             type="submit"
                             aria-label="search"
                             className={classes.Searchbutton}>
