@@ -406,106 +406,102 @@ textarea:focus {
 .user_profile_page {
     margin: 0;
     padding: 0;
-}
-
-.user_profile_page .user_page {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    margin: 2rem 4rem;
+    width: 100%;
+    padding-top: 4rem;
 }
 
-.user_profile_page .user_page .personal_info {
-    flex-basis: 15%;
+.user_profile_page .user_profile {
+    flex-basis: 25%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
 }
 
-.user_profile_page .user_page .personal_info .user_contact {
-    align-items: center;
-    text-align: center;
-    margin-top: 2rem;
-    line-height: 1rem;
+.user_profile_page .user_profile img {
+    border-radius: 100%;
+    margin-bottom: 4rem;
+}
+
+.user_profile_page .user_profile .user_information {
+    justify-content: left;
     font-size: 1.2rem;
 }
 
-.user_profile_page .user_page .personal_info .user_contact .edit_info_btn {
-    border: none;
+.user_profile_page .user_profile .edit_info_btn {
+    color: #fff;
+    background-color: #3f72af;
+    width: 25%;
+    display: flex;
     font-size: 1rem;
-    background-color: rgb(197, 197, 197);
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.4rem;
     margin-top: 1rem;
-    transition: all 0.5s linear;
 }
 
-.user_profile_page .user_page .personal_info .user_contact .edit_info_btn:hover {
-    background-color: rgb(231, 229, 229);
+.user_profile_page .user_profile .edit {
+    display: none;
 }
 
-.user_profile_page .user_page .personal_info::after {
-    content: '';
-    height: 100%;
-    width: 0.25rem;
-    background-color: rgba(24, 22, 22, 0.637);
-    position: absolute;
-    top: 0;
-    right: -20%;
-}
-/* .user_profile_page .user_page .vl {
-    border-left: 0.25rem solid rgba(8, 10, 8, 0.774);
-    height: 70rem;
-    margin: 0 3rem;
-} */
-
-.user_profile_page .user_page .main_info {
-    flex-basis: 85%;
-    margin-left: 5rem;
+.user_profile_page .user_transactions {
+    margin: 0 4rem;
+    flex-basis: 75%;
+    margin-bottom: 4rem;
 }
 
-.user_profile_page .user_page .main_info .college_info {
-    line-height: 1.5rem;
-    text-align: left;
-    margin-left: 4rem;
-    font-size: 1.5rem;
+.user_profile_page .user_transactions .user_trans_heading {
+    margin-bottom: 7rem;
 }
 
-.user_profile_page .user_page .main_info .active_user_items {
-    margin-top: 3rem;
-    line-height: 2rem;
-    font-size: 1.2rem;
+.user_profile_page .user_transactions .user_trans_heading span {
+    color: #fff;
+    background-color: #3f72af;
+    font-size: 1.3rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 1.3rem;
+}
+
+.user_profile_page .user_active_request {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 5px #888888;
+    border-radius: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.user_profile_page .user_transactions .user_active_request {
+    padding: 1rem;
+}
+
+.user_profile_page .user_transactions .user_active_request .imges {
+    flex-basis: 30%;
+    display: flex;
+}
+
+.user_profile_page .user_transactions .user_active_request .imges img {
     width: 100%;
 }
 
-.user_profile_page .user_page .main_info .active_user_items .list_active_user_items_1 {
-    background-color: #d4d4d4;
-    display: flex;
-    flex-direction: row;
-    border-radius: 1.5rem;
-    line-height: 1.5rem;
-    margin-bottom: 1.5rem;
-    margin-left: 4rem;
+.user_profile_page .user_transactions .user_active_request .user_item_info {
+    margin-left: 2rem;
+    flex-basis: 70%;
+    line-height: 115%;
 }
 
-.user_profile_page
-    .user_page
-    .main_info
-    .active_user_items
-    .list_active_user_items_1
-    .item_name_info {
-    flex-basis: 45%;
-    padding-left: 4rem;
+.user_profile_page .user_transactions .user_active_request .user_item_info .item-details b {
+    color: #ff0000;
 }
 
-.user_profile_page .user_page .main_info .active_user_items .list_active_user_items_1 .date {
-    flex-basis: 55%;
-    display: flex;
-    flex-direction: row;
-}
-
-.user_profile_page .user_page .main_info .active_user_items .list_active_user_items_1 .date div {
-    flex-basis: 50%;
+.user_profile_page .user_transactions .user_active_request .user_item_info button {
+    color: #fff;
+    background-color: #3f72af;
+    padding: 1rem 2rem;
+    font-size: 0.8rem;
+    border: none;
+    outline: none;
+    border-radius: 1.3rem;
+    float: right;
+    margin-right: 7rem;
 }
 
 /* User_Profie END */
