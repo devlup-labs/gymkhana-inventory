@@ -312,49 +312,56 @@ textarea:focus {
 }
 
 .admin {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    display: flex;
-    flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 .adminHeader {
-    display: flex;
-    flex-direction: row;
-    background-color: #f9f7f7;
-    color: black;
-    padding: 4px;
+  color: black;
+  padding: 10px;
+  border-right: black solid 2px;
+  padding: 50px;
+  margin: 100px;
+  text-align: center;
+  width: fit-content;
 }
 .adminHeader > .MuiAvatar-root {
-    margin: 5px;
-    width: 60px;
-    height: 60px;
+  margin: auto;
+  width: 160px;
+  height: 160px;
 }
-
+.adminManage > .MuiAvatar-root {
+  margin: auto;
+  width: 60px;
+  height: 60px;
+}
 .adminBody {
-    justify-content: center;
-    background-color: #f9f7f7;
-    padding: 10px;
+  justify-content: center;
+  padding: 10px;
 }
 
 .cards {
-    box-shadow: 2px 4px 5px 4px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px;
-    width: 60vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  box-shadow: 2px 4px 5px 4px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 9px;
 }
 .cardContent {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 8px;
+  display: flex;
+  direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 8px;
 }
 
 .buttonAdmin {
@@ -364,8 +371,21 @@ textarea:focus {
     margin-bottom: 10px;
 }
 .buttonAdmin > .MuiButtonBase-root {
-    margin: 4px;
-    background-color: #112d4e;
+  margin: 4px;
+  background-color: #3f72af;
+}
+.adminTheme{
+  color: white;
+  background-color: #3f72af;
+  padding: 8px;
+  border-radius: 15px;
+  text-align: center;
+  height: fit-content;
+  width: fit-content;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media only screen and (max-width: 600px) {
