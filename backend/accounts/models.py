@@ -5,7 +5,6 @@ from django.dispatch import receiver
 
 societyIds = {'shutterbugs': 1, 'robotics': 2, 'programming': 3, 'science': 4, 'frame-x': 5}
 
-
 class Borrower(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=50, default='')
