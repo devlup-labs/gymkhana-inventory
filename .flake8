@@ -1,3 +1,7 @@
 [flake8]
 max-line-length = 130
+<<<<<<< Updated upstream
+exclude = myenv/, venv/ , */migrations/*
+=======
 exclude = website/website/settings/*, env/, venv/ , */migrations/*
+>>>>>>> Stashed changes
