@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
         marginRight: theme.spacing(2)
     },
     title: {
-        flexGrow: 1
+        flexGrow: 1,
+        fontFamily: 'Open Sans'
     },
     large: {
         width: theme.spacing(7),
@@ -54,7 +55,7 @@ export default function ButtonAppBar() {
                         </Typography>
                     ) : (
                         <Typography variant="h6" className={classes.title}>
-                            Gymkhana-Inventory
+                            <span className="main-title">Gymkhana-Inventory</span>
                         </Typography>
                     )}
                     {isLoggedIn ? (

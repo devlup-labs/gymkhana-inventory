@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Item from './Item';
-import { Avatar, Box, Button, TextField } from '@material-ui/core';
+import { Avatar, Box, Button, TextField, Grid } from '@material-ui/core';
 import ManageAccess from './ManageAccess';
 import classes from '@material-ui/icons/Class';
 
-function AdminProfile(props) {
-    const isManageAcsess = true;
+function AdminProfile() {
     const data = {
         items: [
             {
@@ -59,23 +58,41 @@ function AdminProfile(props) {
             }
         ]
     };
+    const [toggleManageAccess, setToggleManageAccess] = useState(false);
     return (
-        <Box className="admin">
-            <Box className="adminHeader">
+        <Grid item container xs={12}>
+            <Grid className="adminHeader" item lg={3} sm={12}>
                 <Avatar />
                 <Box>
-                    <h2 style={{ margin: '3px' }}>Club </h2>
-                    <p style={{ margin: '3px' }}>Email ID:club@iitj.ac.in</p>
+                    <h2 style={{ margin: '3px' }}>Name: Club </h2>
+                    <p style={{ margin: '3px' }}>Email: club@iitj.ac.in</p>
                 </Box>
-            </Box>
-            <Box className="adminBody">
                 <Box className="buttonAdmin">
                     <Button variant="contained" color="primary">
-                        Manage Access
+                        Edit Profile
                     </Button>
                 </Box>
-                {isManageAcsess === true ? (
-                    <Box className="cards">
+            </Grid>
+            <Grid className="adminBody" item lg={9} sm={12}>
+                <Box className="buttonAdmin">
+                    <Button
+                        onClick={() => setToggleManageAccess(!toggleManageAccess)}
+                        variant="contained"
+                        color="primary">
+                        Manage Access
+                    </Button>
+                    <Button variant="contained" color="primary">
+                        Add New Item
+                    </Button>
+                    <Button variant="contained" color="primary">
+                        View/Edit Inventory
+                    </Button>
+                    <Button variant="contained" color="primary">
+                        Invite
+                    </Button>
+                </Box>
+                {toggleManageAccess ? (
+                    <Box>
                         <form className={classes.root} noValidate autoComplete="on">
                             <TextField id="standard-basic" label="Name" />
                             <TextField id="filled-basic" label="Email" />
@@ -84,7 +101,7 @@ function AdminProfile(props) {
                                 className={classes.root}
                                 variant="contained"
                                 style={{
-                                    backgroundColor: '#112d4e',
+                                    backgroundColor: '#3f72af',
                                     color: 'white',
                                     margin: '8px'
                                 }}>
@@ -104,17 +121,8 @@ function AdminProfile(props) {
                     </Box>
                 ) : null}
 
-                <Box className="buttonAdmin">
-                    <Button variant="contained" color="primary">
-                        Add New Item
-                    </Button>
-                    <Button variant="contained" color="primary">
-                        View/Edit Inventory
-                    </Button>
-                </Box>
                 <Box className="adminBody">
-                    <p>Total items: </p>
-                    <h3>Pending Requests</h3>
+                    <h2 className="adminTheme">Pending Requests</h2>
                     {data.items.map((card) => {
                         return (
                             <Item
@@ -129,7 +137,14 @@ function AdminProfile(props) {
                             />
                         );
                     })}
-                    <h3>Archive Transaction</h3>
+                    <Box>
+                        <h2 className="adminTheme">Active Transaction</h2>
+                        <Box className="buttonAdmin">
+                            <Button variant="contained" color="primary">
+                                Extension Request
+                            </Button>
+                        </Box>
+                    </Box>
                     {data.items.map((card) => {
                         return (
                             <Item
@@ -145,7 +160,7 @@ function AdminProfile(props) {
                         );
                     })}
 
-                    <h3>Transaction History</h3>
+                    <h2 className="adminTheme">Transaction History</h2>
                     <Box>
                         {data.items.map((card) => {
                             return (
@@ -163,8 +178,8 @@ function AdminProfile(props) {
                         })}
                     </Box>
                 </Box>
-            </Box>
-        </Box>
+            </Grid>
+        </Grid>
     );
 }
 
