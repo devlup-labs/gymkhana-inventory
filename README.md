@@ -12,15 +12,17 @@ To make contributions to this repo, check out [contribution.md](contribution.md)
 `python -m venv myenv`<br/>
 `myenv\Scripts\activate` (for windows)<br/>
 `source env/bin/activate` (for mac)
-5. Go to backend folder and install all the required libraries in terminal.<br/>
+5. copy the .env.example file to .env<br/>
+`cp .env.example .env`<br/>
+6. Go to backend folder and install all the required libraries in terminal.<br/>
 `cd backend`<br/>
 `pip install -r requirements.txt`
-6. Now migrate the models.<br/>
+7. Now migrate the models.<br/>
 `python manage.py makemigrations`<br/>
 `python manage.py migrate`
-7. Create the superuser(Admin).<br/>
+8. Create the superuser(Admin).<br/>
 `python manage.py createsuperuser`
-8. Type in following command to run project locally now at http://127.0.0.1:8000/<br/>
+9. Type in following command to run project locally now at http://127.0.0.1:8000/<br/>
 `python manage.py runserver`
 
 ## Built with
