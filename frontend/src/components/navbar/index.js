@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -33,9 +33,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonAppBar() {
     const location = useLocation();
-    useEffect(() => {
-        console.log(location.pathname);
-    }, []);
     const searchAreaHeight = location.pathname === '/' ? '50vh' : '22vh';
     const navBackgroundColor = location.pathname === '/' ? 'rgba(0,0,0,0)' : '#148FD3';
 
