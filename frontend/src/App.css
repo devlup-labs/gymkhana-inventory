@@ -73,7 +73,7 @@
     margin-right: 3px;
 }
 
-.home input[type='text'] {
+.navbar .index input[type='text'] {
     border: none;
     background-color: none;
     outline: 0;
@@ -82,7 +82,7 @@
     padding-left: 10px;
 }
 
-.home input[type='text']:focus {
+.navbar .index input[type='text']:focus {
     border: none;
     background-color: none;
     outline: 0;
