@@ -33,6 +33,7 @@ jobs:
         flake8 .
     - name: Check Python Errors
       run: |
-        # pytest
+        cp .env.example .env
         cd backend
         python manage.py makemigrations
+        # pytest

@@ -4,3 +4,4 @@ django-cors-headers
 django-rest-auth
 django-allauth
 flake8~=3.8.4
+python-decouple
