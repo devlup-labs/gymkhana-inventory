@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,6 +13,8 @@ import Grid from '@material-ui/core/Grid';
 import IITJ from '../../IITJ.png';
 import { Link } from 'react-router-dom';
 import SendIcon from '@material-ui/icons/Send';
+// import axios from 'axios';
+import Api from '../../api/Api';
 
 const useStyles = makeStyles((theme) => ({
     Searchbutton: {
@@ -25,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Home() {
+    useEffect(() => {
+        Api.getAllSocieties();
+    }, []);
     //  -------Fake Data -------
 
     const data = [
