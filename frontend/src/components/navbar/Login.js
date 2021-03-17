@@ -5,7 +5,7 @@ import GoogleLogin from 'react-google-login';
 import axios from 'axios';
 
 const googleLogin = async (accesstoken) => {
-    const res = await axios.post('http://localhost:8000/rest-auth/google/', {
+    const res = await axios.post('http://localhost:8000/user/login/google/', {
         access_token: accesstoken
     });
     console.log(res);
