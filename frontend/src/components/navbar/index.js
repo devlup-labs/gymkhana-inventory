@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState}from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -12,59 +12,86 @@ import logo from '../../logo.png';
 import Tooltip from '@material-ui/core/Tooltip';
 import { Link, useLocation } from 'react-router-dom';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import Background from '../../star.jpg';
+
+import {useGlobalStore} from '../../contextProviders/globalContext';
+import shadows from '@material-ui/core/styles/shadows';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        flexGrow: 1
+        flexGrow: 1,
+        backgroundImage: `linear-gradient(rgba(100,100,100,0.5),rgba(100,100,100,0.5)), url('https://cdn.pixabay.com/photo/2021/02/13/13/02/red-lighthouse-6011477_1280.jpg')`,
+        backgroundRepeat:`no-repeat`,
+        backgroundSize: `cover`,
+        backgroundPosition:'center'
     },
     menuButton: {
         marginRight: theme.spacing(2)
     },
     title: {
-        flexGrow: 1,
+        flex: 1,
         fontFamily: 'Open Sans'
     },
     large: {
         width: theme.spacing(7),
         height: theme.spacing(7)
+    },
+    SearchButton: {
+        padding: '10px',
+        backgroundColor: "#148FD3",
+        color:"#FFF",
+    },
+    toolbar:{
+        display:"flex",
+        flexDirection:"row",
+        alignItems:"center",
+        justifyContent:"space-between"
     }
 }));
 
 export default function ButtonAppBar() {
     const location = useLocation();
-    const searchAreaHeight = location.pathname === '/' ? '50vh' : '22vh';
-    const navBackgroundColor = location.pathname === '/' ? 'rgba(0,0,0,0)' : '#148FD3';
+    const searchAreaHeight = location.pathname === '/' ? '70vh' : '35vh';
+    const navBackgroundColor = location.pathname === '/' ? 'rgba(0,0,0,0)' : '#FFF';
+    const brandFont = location.pathname === '/' ? '#FFF' : '#222';
+    const shadow = location.pathname === '/' ? 'none' : '0px 2px 15px 1px #ccc';
+
+
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
     const classes = useStyles();
     const isLoggedIn = false;
+
+    const [value, setValue] = useState("")
+    const [searchDisable, setSearchDisable] = useState(false)
+    const globalStore = useGlobalStore()
+
     return (
-        <div className={classes.root} style={{ backgroundImage: `url(${Background})` }}>
-            <AppBar position="static" style={{ backgroundColor: `${navBackgroundColor}` }}>
-                <Toolbar>
-                    <IconButton
-                        component={Link}
-                        to="/"
-                        edge="start"
-                        className={classes.menuButton}
-                        color="inherit"
-                        aria-label="home-logo">
+        <div className={classes.root} >
+            <AppBar position="static" style={{ backgroundColor: `${navBackgroundColor}`, boxShadow:`${shadow}`}} >
+                <Toolbar className={classes.toolbar}>
+                    <div className="navbar-brand">
+                        <IconButton
+                            component={Link}
+                            to="/"
+                            edge="start"
+                            className={classes.menuButton}
+                            color="inherit"
+                            aria-label="home-logo">
                         <Avatar alt="semy Sharp" src={logo} />
-                    </IconButton>
-                    {isMobile ? (
-                        <Typography variant="h6" className={classes.title}>
-                            ...
-                        </Typography>
-                    ) : (
-                        <Typography variant="h6" className={classes.title}>
-                            <span className="main-title">Gymkhana-Inventory</span>
-                        </Typography>
-                    )}
+                        </IconButton>
+                        <div>
+                            {isMobile ? null : (
+                                <Typography variant="h6" className={classes.title}>
+                                    <span className="main-title" style={{color:`${brandFont}`}}>Gymkhana-Inventory</span>
+                                </Typography>
+                            )}
+                        </div>
+                    </div>
                     {isLoggedIn ? (
-                        <>
-                            <Button color="secondary" variant="contained">
+                        <div className="login-button">
+                            <Button className={classes.SearchButton} variant="contained">
                                 Logout
                             </Button>
                             <Tooltip title="Profile">
@@ -78,76 +105,87 @@ export default function ButtonAppBar() {
                                     <AccountCircle />
                                 </IconButton>
                             </Tooltip>
-                        </>
+                        </div>
                     ) : (
                         <GoogleSocialAuth />
                     )}
                 </Toolbar>
             </AppBar>
-            <div
-                className="search-area"
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    height: `${searchAreaHeight}`,
-                    alignItems: 'center',
-                    width: '100%',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                }}>
-                {location.pathname === '/' ? (
-                    <div className="texts" style={{ textAlign: 'center', color: 'white' }}>
-                        <h2 id="heading" style={{ textAlign: 'center' }}>
-                            Search for Equipments
-                        </h2>
-                        <p>Everything at one place</p>
-                    </div>
-                ) : (
-                    <div></div>
-                )}
-
-                <form>
+            {
+                location.pathname ==='/' || location.pathname ==='/SearchPage'  ? (
                     <div
-                        className="search-bar"
+                        className="search-area"
                         style={{
-                            backgroundColor: 'white',
-                            width: 'max-content',
-                            borderRadius: '5px'
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            height: `${searchAreaHeight}`,
+                            alignItems: 'center',
+                            width: '100%',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center'
                         }}>
-                        <input
-                            className="bar"
-                            type="text"
-                            id="search-input"
-                            placeholder="Search for anything"
-                            style={{
-                                border: 'none',
-                                backgroundColor: 'none',
-                                outline: '0',
-                                fontSize: '18px'
-                            }}
-                        />
-                        <Button
-                            component={Link}
-                            to="/SearchPage"
-                            type="submit"
-                            aria-label="search"
-                            className={classes.Searchbutton}
-                            style={{
-                                backgroundColor: '#148FD3',
-                                borderRadius: '0px 5px 5px 0px',
-                                textTransform: 'none'
-                            }}>
-                            Lets Search
-                        </Button>
+                        {location.pathname === '/' ? (
+                                <div className="texts" style={{ textAlign: 'center', color: 'white' }}>
+                                    <h2 id="heading" style={{ textAlign: 'center' }}>
+                                        Search for Equipments
+                                    </h2>
+                                    <p>Everything at one place</p>
+                                </div>
+                            ) :
+                            null
+                        }
+                        <form className="search-bar-form">
+                            <div className="search-bar">
+                                <input
+                                    className="bar"
+                                    type="text"
+                                    id="search-input"
+                                    placeholder="Search for anything"
+                                    style={{
+                                        border: 'none',
+                                        backgroundColor: 'white',
+                                        outline: '0',
+                                        // fontSize: '18px',
+                                    }}
+                                    onChange={(e)=> {
+                                        setValue(e.target.value);
+                                        if(e.target.value !== ""){
+                                            setSearchDisable(false)
+                                        }
+                                    }}
+                                    value={value}
+                                />
+                                <Button
+                                    component={Link}
+                                    to="/SearchPage"
+                                    type="submit"
+                                    aria-label="search"
+                                    className={classes.SearchButton}
+                                    style={{
+                                        backgroundColor: '#148FD3',
+                                        borderRadius: '0px 5px 5px 0px',
+                                        textTransform: 'none'
+                                    }}
+
+                                    disabled={searchDisable}
+                                    onClick={()=>{
+                                        if(value !== ""){
+                                            globalStore.searchfunction(value)
+                                            console.log(value)
+                                            setValue("")
+                                        }
+                                    }}
+                                >
+                                    Lets Search
+                                </Button>
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
+                ) : null
+            }
+
         </div>
     );
 }
-// import { Link } from 'react-router-dom';
-// import logo from '../../logo.png';
-// import GoogleSocialAuth from './Login';
-// <div><GoogleSocialAuth /></div>
