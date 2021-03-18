@@ -125,9 +125,6 @@
     width: 60%;
 }
 
-
-
-
 .home #heading {
     margin: 2px;
     text-align: center;
@@ -470,7 +467,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    border-right: 2px solid #777777;
+
 }
 
 .item-card .item-image img{
@@ -479,7 +476,9 @@
 
 
 .item-card .item-details{
+    border-left: 2px solid #777777;
     margin-left: 10px;
     padding-left: 15px;
+    width: 50%;
 }
 

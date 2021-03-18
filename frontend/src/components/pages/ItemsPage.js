@@ -1,15 +1,16 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import camera from './../../camera.jpg';
+// import camera from './../../camera.jpg';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
-// import Modal from 'react-modal';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import EditEquipment from './../modal/EditEquipment';
 import MakeRequest from '../modal/MakeRequest';
 import ValidationTextFields from '../form';
+
+import {useGlobalStore} from '../../contextProviders/globalContext';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -29,22 +30,28 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ItemsPage() {
+    const globalStore = useGlobalStore()
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
-    const viewerUser = true;
-    const available = true;
+    const viewerUser = globalStore.loginType === "user"
+
     const maxWidth = React.useState('md');
+
+
+
+
+
     const data = {
-        nameOfEquipment: 'NAME OF EQUIPMENT',
-        equipmentId: 'd4f8j9',
-        society: 'Frame-X',
-        quantity: '5',
-        Description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ' +
-            'magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo ' +
-            'consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ' +
-            'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        nameOfEquipment: globalStore.equipmentDetails.title,
+        equipmentId: globalStore.equipmentDetails.id,
+        image: globalStore.equipmentDetails.url,
+        society: globalStore.equipmentDetails.society,
+        quantity: globalStore.equipmentDetails.available,
+        available: globalStore.equipmentDetails.available > 0,
+        Description: globalStore.equipmentDetails.desc
     };
+
+
     const handleOpen = () => {
         setOpen(true);
     };
@@ -55,7 +62,7 @@ function ItemsPage() {
         <div className={classes.root} id="item_page">
             <Grid container spacing={3} className="image">
                 <Grid item xs={5} className="image">
-                    <img src={camera} width="75%" />
+                    <img src={data.image} width="75%" />
                 </Grid>
 
                 <Divider orientation="vertical" flexItem />
@@ -74,7 +81,7 @@ function ItemsPage() {
                         <h4>
                             Total Quantity : <p className={classes.heading4}>{data.quantity}</p>
                         </h4>
-                        {available ? (
+                        {data.available ? (
                             <h3 style={{ color: 'green' }}>AVAILABLE : YES</h3>
                         ) : (
                             <h3 style={{ color: 'red' }}>AVAILABLE : NO</h3>
@@ -83,7 +90,7 @@ function ItemsPage() {
                             DESCRIPTION : <p className={classes.heading4}>{data.Description}</p>
                         </h4>
                         {viewerUser ? (
-                            available ? (
+                            data.available ? (
                                 <div className={classes.button}>
                                     <Button
                                         variant="contained"

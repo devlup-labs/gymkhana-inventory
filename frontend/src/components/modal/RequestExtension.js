@@ -8,6 +8,11 @@ import { Grid } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import { useGlobalStore } from '../../contextProviders/globalContext';
+
+
+
+
 const useStyles = makeStyles((theme) => ({
     form: {
         minWidth: 'lg'
@@ -36,15 +41,18 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FormDialog() {
     const classes = useStyles();
+    const globalStore = useGlobalStore()
+
     const data = {
-        nameOfEquipment: 'NAME OF EQUIPMENT',
-        equipmentId: 'd4f8j9',
-        society: 'Frame-X',
-        quantity: '5',
-        deadline: '07-03-2021',
-        Description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        nameOfEquipment: globalStore.equipmentDetails.title,
+        equipmentId: globalStore.equipmentDetails.id,
+        image: globalStore.equipmentDetails.url,
+        society: globalStore.equipmentDetails.society,
+        quantity: globalStore.equipmentDetails.available,
+        available: globalStore.equipmentDetails.available > 0,
+        Description: globalStore.equipmentDetails.desc
     };
+    
     return (
         <div>
             <DialogTitle id="form-dialog-title">Request Extension</DialogTitle>
