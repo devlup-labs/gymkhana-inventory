@@ -23,7 +23,8 @@ function User() {
     }
 
     return (
-        <React.Fragment>
+
+        <div className="user-profile-page-container">
             <Grid className="user_profile_page">
                 <Grid className="user_profile">
                     <Grid>
@@ -153,7 +154,7 @@ function User() {
                     </Grid>
                 </Grid>
             </Grid>
-        </React.Fragment>
+        </div>
     );
 }
 
