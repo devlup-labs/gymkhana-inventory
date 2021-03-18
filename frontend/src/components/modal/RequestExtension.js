@@ -50,9 +50,10 @@ export default function FormDialog() {
         society: globalStore.equipmentDetails.society,
         quantity: globalStore.equipmentDetails.available,
         available: globalStore.equipmentDetails.available > 0,
-        Description: globalStore.equipmentDetails.desc
+        Description: globalStore.equipmentDetails.desc,
+        deadline:""
     };
-    
+
     return (
         <div>
             <DialogTitle id="form-dialog-title">Request Extension</DialogTitle>
