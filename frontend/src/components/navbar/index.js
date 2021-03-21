@@ -20,7 +20,7 @@ import shadows from '@material-ui/core/styles/shadows';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-        backgroundImage: `linear-gradient(rgba(100,100,100,0.5),rgba(100,100,100,0.5)), url('https://cdn.pixabay.com/photo/2021/02/13/13/02/red-lighthouse-6011477_1280.jpg')`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)), url('https://cdn.pixabay.com/photo/2021/02/13/13/02/red-lighthouse-6011477_1280.jpg')`,
         backgroundRepeat:`no-repeat`,
         backgroundSize: `cover`,
         backgroundPosition:'center'
@@ -54,8 +54,7 @@ export default function ButtonAppBar() {
     const searchAreaHeight = location.pathname === '/' ? '70vh' : '35vh';
     const navBackgroundColor = location.pathname === '/' ? 'rgba(0,0,0,0)' : '#FFF';
     const brandFont = location.pathname === '/' ? '#FFF' : '#222';
-    const shadow = location.pathname === '/' ? 'none' : '0px 2px 15px 1px #ccc';
-
+    const shadow = location.pathname === '/' ? 'none' : '0px 2px 15px 1px #777';
 
 
     const theme = useTheme();

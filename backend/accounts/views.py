@@ -17,8 +17,7 @@ class EditUserProfile(APIView):
 
     def post(self, request, *args, **kwargs):
 
-        # dic = request.data['data']['profileObj']
-        mail = request.data['data']['profileObj']['email']
+        mail = request.data["mail"]
         user = User.objects.filter(email=mail)
 
         if user.exists() and Borrower.objects.filter(user=user).exists():
