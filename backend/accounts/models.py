@@ -2,8 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from rest_framework.views import APIView
-
 
 societyIds = {'shutterbugs': 1, 'robotics': 2, 'programming': 3, 'science': 4, 'frame-x': 5}
 
@@ -46,4 +44,3 @@ def create_user_profile(sender, instance, created, **kwargs):
             u = SocietyAdmin.objects.create(user=instance, society_name=instance.first_name,
                                             society_id=societyIds[mail_prefix[0]])
             u.save()
-

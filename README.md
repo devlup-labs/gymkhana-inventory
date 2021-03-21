@@ -1,49 +1,47 @@
-# Gymkhana Inventory
-
+# Gymkhana Inventory ![](https://img.shields.io/badge/Status-Active%20development-blue) ![](https://img.shields.io/badge/Django-v3.1.7-orange) ![](https://img.shields.io/badge/Python-v3.8.5-green)
 WebApp to manage Gymkhana Inventory
 
-**Getting Started with Contributions**
+To make contributions to this repo, check out [contribution.md](contribution.md)
 
-_General Instructions_
+## Project Setup
+1. Clone this repository.<br/>
+`git clone https://github.com/devlup-labs/gymkhana-inventory.git`
+2. Make sure Python and pip are installed else install it.
+3. Open up your IDE.
+4. Create a virtual environment and activate it. (For windows use following code)<br/>
+`python -m venv myenv`<br/>
+`myenv\Scripts\activate` (for windows)<br/>
+`source env/bin/activate` (for mac)
+5. copy the .env.example file to .env<br/>
+`cp .env.example .env`<br/>
+6. Go to backend folder and install all the required libraries in terminal.<br/>
+`cd backend`<br/>
+`pip install -r requirements.txt`
+7. Now migrate the models.<br/>
+`python manage.py makemigrations`<br/>
+`python manage.py migrate`
+8. Create the superuser(Admin).<br/>
+`python manage.py createsuperuser`
+9. Type in following command to run project locally now at http://127.0.0.1:8000/<br/>
+`python manage.py runserver`
 
-- Fork the Repo
-- Rebase your repo with this parent repo before making any PR
-- Check for conflicts
-- Start Coding
+## Built with
+- Django
+- React js
 
-Important Scripts to be run before any commit for a contributor :
+## Collaborators
+| Name              | Year          |Role   |
+| ----------------- |:-------------|:----------|
+|[Anshul Tilondiya](https://github.com/Anshultilondiya)|Pre-final Year|Mentor|
+|[Yashvi Ramanuj](https://github.com/YashviRamanuj)|Pre-final Year|Mentor|
+|[Hard Savani](https://github.com/HardSavani)|Sophomore|Develepor|
+|[Bhawna Chopra ](https://github.com/bhawnachopra2002)|Sophomore|Develepor|
+|[Darsh Patel](https://github.com/patel-16)|Sophomore|Develepor|
+|[Dhruv Kakadiya](https://github.com/dhruv-kakadiya)|Sophomore|Develepor|
+|[Suyash Agrnihotri](https://github.com/suyashagno3)|Sophomore|Develepor|
+|[Neeraj Anand](https://github.com/neeraj-2)|Sophomore|Develepor|
+|[Sarthak Raj Jindal](https://github.com/SarthakRajJindal)|Sophomore|Develepor|
+|[Akshay Jyani](https://github.com/AkshayJyani)|Sophomore|Develepor|
+|[Nimit](https://github.com/Nimit3-droid)|Sophomore|Develepor|
+|[Niharika Manhar](https://github.com/niharikamanhar)|Freshman|Develepor|
 
-For formatting the code run ```npm run format```
-For analyzing lint-errors run ```npm run lint```
-For fixing lint-errors that are autofixable run ```npm run lint-fix```
-
-Happy Coding
-
-##Gymkhana Inventory Reports
-
-**All the Students participating in WoC through this project should maintain a work report. This will help you in getting familiar with the GSoC Project reports**
-
-Name your report in this fashion : (Team-Abbreviation)\_studentname_WoC_report.md
-
-### Team-Abbreviation : FE - Frontend, BE Backend
-
-<br>
-ex: FE_anshul_WoC_report.md
-<br>
-ex: BE_yashvi_WoC_report.md
-
-## Format
-
-1. Personal Information
-   - Name
-   - Github Username
-   - Team : Frontend/Backend
-2. Weekly Report
-   - Week 1
-   - Week 2
-   - Week 3
-   - Week 4
-3. Your Learnings and take aways
-   - Your Experince
-   - Your Learnings
-   - Any Suggestion {optional}

@@ -1,82 +1,167 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-// import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import camera from './../../camera.jpg';
+// import camera from './../../camera.jpg';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import EditEquipment from './../modal/EditEquipment';
+import MakeRequest from '../modal/MakeRequest';
+import ValidationTextFields from '../form';
+
+import {useGlobalStore} from '../../contextProviders/globalContext';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-        margin: theme.spacing(5),
-        marginTop: theme.spacing(10)
+        margin: theme.spacing(10),
+        marginTop: theme.spacing(20)
     },
-    paper: {
-        padding: theme.spacing(2),
-        textAlign: 'left',
-        color: theme.palette.text.primary
-    },
-    paper1: {
-        justifyContent: 'center',
-        textAlign: 'center',
-        color: theme.palette.text.primary,
-        objectFit: 'cover'
+    heading4: {
+        fontWeight: 'normal',
+        display: 'inline'
     },
     button: {
         '& > *': {
-            marginTop: theme.spacing(5),
-            display: 'flex'
+            marginTop: theme.spacing(5)
         }
     }
 }));
 
 function ItemsPage() {
+    const globalStore = useGlobalStore()
     const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
+    const viewerUser = globalStore.loginType === "user"
 
+    const maxWidth = React.useState('md');
+
+
+
+
+
+    const data = {
+        nameOfEquipment: globalStore.equipmentDetails.title,
+        equipmentId: globalStore.equipmentDetails.id,
+        image: globalStore.equipmentDetails.url,
+        society: globalStore.equipmentDetails.society,
+        quantity: globalStore.equipmentDetails.available,
+        available: globalStore.equipmentDetails.available > 0,
+        Description: globalStore.equipmentDetails.desc
+    };
+
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
     return (
-        <div className={classes.root}>
-            <Grid container spacing={3}>
-                <Grid item xs={5}>
-                    <img src={camera} width="100%" />
+        <div className={classes.root} id="item_page">
+            <Grid container spacing={3} className="image">
+                <Grid item xs={5} className="image">
+                    <img src={data.image} width="75%" />
                 </Grid>
 
                 <Divider orientation="vertical" flexItem />
 
-                <Grid item xs={6}>
-                    <h1>NAME OF EQUIPMENT</h1>
-                    <h4>Equipment ID: d4n5c6</h4>
-                    <h4>Belongs to : Frame-X</h4>
-                    <h4>Total Quantity : 5</h4>
-                    <h3>AVAILABLE : YES</h3>
-                    <h4>
-                        DESCRIPTION :Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                        est laborum.
-                    </h4>
-                    <Grid container spacing={3}>
-                        <Grid item xs={4} className={classes.button}>
-                            <Button variant="contained" color="primary" href="#contained-buttons">
-                                MAKE REQUEST
-                            </Button>
-                        </Grid>
-                        <Grid item xs={4} className={classes.button}>
-                            <Button variant="contained" color="primary" href="#contained-buttons">
-                                NOTIFY WHEN AVAILABLE
-                            </Button>
-                        </Grid>
-                        <Grid item xs={4} className={classes.button}>
-                            <Button variant="contained" color="primary" href="#contained-buttons">
-                                EDIT EQUIPMENT DETAILS
-                            </Button>
-                        </Grid>
-                    </Grid>
+                <Grid item xs={6} className="equipment">
+                    <div>
+                        <div className="heading1">
+                            <h1>{data.nameOfEquipment}</h1>
+                        </div>
+                        <h4>
+                            Equipment ID : <p className={classes.heading4}>{data.equipmentId}</p>
+                        </h4>
+                        <h4>
+                            Belongs to : <p className={classes.heading4}>{data.society}</p>
+                        </h4>
+                        <h4>
+                            Total Quantity : <p className={classes.heading4}>{data.quantity}</p>
+                        </h4>
+                        {data.available ? (
+                            <h3 style={{ color: 'green' }}>AVAILABLE : YES</h3>
+                        ) : (
+                            <h3 style={{ color: 'red' }}>AVAILABLE : NO</h3>
+                        )}
+                        <h4>
+                            DESCRIPTION : <p className={classes.heading4}>{data.Description}</p>
+                        </h4>
+                        {viewerUser ? (
+                            data.available ? (
+                                <div className={classes.button}>
+                                    <Button
+                                        variant="contained"
+                                        color="primary"
+                                        href="#contained-buttons"
+                                        className="heading1"
+                                        onClick={handleOpen}>
+                                        MAKE REQUEST
+                                    </Button>
+                                    <Dialog
+                                        open={open}
+                                        onClose={handleClose}
+                                        aria-labelledby="form-dialog-title"
+                                        maxWidth={maxWidth}>
+                                        <MakeRequest />
+                                        <DialogActions>
+                                            <Button onClick={handleClose} color="primary">
+                                                Cancel
+                                            </Button>
+                                            <Button
+                                                onClick={handleClose}
+                                                color="primary"
+                                                variant="contained">
+                                                Confirm
+                                            </Button>
+                                        </DialogActions>
+                                    </Dialog>
+                                </div>
+                            ) : (
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    href="#contained-buttons"
+                                    className="heading1">
+                                    NOTIFY WHEN AVAILABLE
+                                </Button>
+                            )
+                        ) : (
+                            <div className={classes.button}>
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    href="#contained-buttons"
+                                    className="heading1"
+                                    onClick={handleOpen}>
+                                    EDIT EQUIPMENT DETAILS
+                                </Button>
+                                <Dialog
+                                    open={open}
+                                    onClose={handleClose}
+                                    aria-labelledby="form-dialog-title"
+                                    maxWidth={maxWidth}>
+                                    <EditEquipment />
+                                    <DialogActions>
+                                        <Button onClick={handleClose} color="primary">
+                                            Cancel
+                                        </Button>
+                                        <Button
+                                            onClick={handleClose}
+                                            color="primary"
+                                            variant="contained">
+                                            Confirm
+                                        </Button>
+                                    </DialogActions>
+                                </Dialog>
+                            </div>
+                        )}
+                    </div>
                 </Grid>
             </Grid>
+            <ValidationTextFields/>
         </div>
     );
 }
