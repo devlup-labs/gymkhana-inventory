@@ -36,7 +36,12 @@ export const createGlobalStore = ()=>{
             this.searchText = text
             console.log(this.searchText)
         },
-
+        equipmentDetails : null,
+        equipmentFunction(item){
+            this.equipmentDetails = item
+            console.log("Equipment Details",this.equipmentDetails)
+        },
+        loginType: "admin"
     }
 
 }
