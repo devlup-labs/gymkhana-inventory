@@ -31,4 +31,3 @@ class EditUserProfile(APIView):
                 return Response({"message": "error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         else:
             return Response({"message": "user not found"}, status=status.HTTP_404_NOT_FOUND)
-
