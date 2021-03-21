@@ -3,10 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {SocietyProvider} from './contextProviders/societyContext';
+import { GlobalProvider } from './contextProviders/globalContext';
+import { EquipmentProvider } from './contextProviders/equipmentContext';
+
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <GlobalProvider>
+            <SocietyProvider>
+                <EquipmentProvider>
+                    <App />
+                </EquipmentProvider>
+        </SocietyProvider>
+    </GlobalProvider>
     </React.StrictMode>,
     document.getElementById('root')
 );
