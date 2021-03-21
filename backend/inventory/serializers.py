@@ -10,12 +10,16 @@ class SocietySerializer(serializers.ModelSerializer):
 
 
 class EquipmentSerializer(serializers.ModelSerializer):
+    societyname = SocietySerializer(many=False)
+
     class Meta:
         model = Equipment
         fields = ['id', 'name', 'description', 'quantity', 'societyname', 'numavail']
 
 
 class Equipment_issuedSerializer(serializers.ModelSerializer):
+    equipment = EquipmentSerializer(many=False)
+
     class Meta:
         model = Equipment_issued
         fields = ['id', 'equipment', 'issuedate', 'returndate', 'borrower', 'isapproved']
