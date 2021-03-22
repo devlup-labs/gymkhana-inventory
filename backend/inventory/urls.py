@@ -8,5 +8,7 @@ urlpatterns = [
     path('deleteequipment/<int:id>', views.delete_equipment),
     path('getallsocieties', views.get_all_society),
     path('pendingreturns', views.get_pending_returns),
-    path('searchequipment/', views.SearchEquipment.as_view())
+    path('searchequipment/', views.SearchEquipment.as_view()),
+    path('make-request/', views.make_request),
+    path('decline-request/', views.decline_request)
 ]
