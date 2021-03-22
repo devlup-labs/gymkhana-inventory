@@ -1,4 +1,4 @@
-from .serializers import EquipmentSerializer, SocietySerializer
+from .serializers import EquipmentSerializer, SocietySerializer, Equipment_issuedSerializer
 # from django.shortcuts import render
 import json
 from django.core.exceptions import ObjectDoesNotExist
@@ -8,8 +8,9 @@ from rest_framework import status
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 # Create your views here.
-from .models import Equipment
-from accounts.models import Society
+from .models import Equipment, Equipment_issued
+from accounts.models import Society, Borrower
+# from datetime import datetime
 # Create your views here.
 
 
@@ -81,3 +82,13 @@ def get_all_society(request):
     # equip = Equipment.objects.filter(societyname=society)
     serializer = SocietySerializer(all_society, many=True)
     return JsonResponse({'societies': serializer.data}, safe=False, status=status.HTTP_200_OK)
+
+
+@api_view(["GET"])
+@csrf_exempt
+def get_pending_returns(request):
+    payload = json.loads(request.body)
+    borrowern = Borrower.objects.get(user=payload["borrower"])
+    equip = Equipment_issued.objects.filter(borrower=borrowern, isapproved=True)
+    serializer = Equipment_issuedSerializer(equip, many=True)
+    return JsonResponse({'Equipments To Be Returned': serializer.data}, safe=False, status=status.HTTP_200_OK)
