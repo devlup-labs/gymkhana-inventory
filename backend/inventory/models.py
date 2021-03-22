@@ -1,5 +1,5 @@
 from django.db import models
-from accounts.models import SocietyAdmin, Borrower
+from accounts.models import Society, Borrower
 from datetime import datetime
 
 # Create your models here.
@@ -9,7 +9,7 @@ class Equipment(models.Model):
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=300, blank=True)
     quantity = models.IntegerField(default=1)
-    societyname = models.ForeignKey(SocietyAdmin, on_delete=models.CASCADE)
+    societyname = models.ForeignKey(Society, on_delete=models.CASCADE)
     numavail = models.IntegerField(default=1)
 
     def __str__(self):

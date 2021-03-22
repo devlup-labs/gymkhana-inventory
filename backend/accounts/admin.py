@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from .models import Borrower, SocietyAdmin
+from .models import Borrower, Society
 # Register your models here.
 
 admin.site.register(Borrower)
-admin.site.register(SocietyAdmin)
+admin.site.register(Society)

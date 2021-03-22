@@ -1,11 +1,11 @@
 from rest_framework import serializers
 from .models import Equipment, Equipment_issued
-from accounts.models import SocietyAdmin
+from accounts.models import Society
 
 
 class SocietySerializer(serializers.ModelSerializer):
     class Meta:
-        model = SocietyAdmin
+        model = Society
         fields = ['user', 'society_id', 'society_name']
 
 
