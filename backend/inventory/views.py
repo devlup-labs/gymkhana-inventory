@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 # Create your views here.
 from .models import Equipment, Equipment_issued
-from accounts.models import SocietyAdmin, Borrower
+from accounts.models import Society, Borrower
 # from datetime import datetime
 # Create your views here.
 
@@ -18,7 +18,7 @@ from accounts.models import SocietyAdmin, Borrower
 @csrf_exempt
 def get_equipment_by_society(request):
     payload = json.loads(request.body)
-    society = SocietyAdmin.objects.get(society_name=payload["society"])
+    society = Society.objects.get(society_name=payload["society"])
     equip = Equipment.objects.filter(societyname=society)
     serializer = EquipmentSerializer(equip, many=True)
     return JsonResponse({'equipments': serializer.data}, safe=False, status=status.HTTP_200_OK)
@@ -29,7 +29,7 @@ def get_equipment_by_society(request):
 def add_equipment(request):
     payload = json.loads(request.body)
     try:
-        society = SocietyAdmin.objects.get(society_name=payload["society"])
+        society = Society.objects.get(society_name=payload["society"])
         equipment = Equipment.objects.create(
             name=payload["name"],
             description=payload["description"],
@@ -78,7 +78,7 @@ def delete_equipment(request, id):
 @csrf_exempt
 def get_all_society(request):
     # payload = json.loads(request.body)
-    all_society = SocietyAdmin.objects.all()
+    all_society = Society.objects.all()
     # equip = Equipment.objects.filter(societyname=society)
     serializer = SocietySerializer(all_society, many=True)
     return JsonResponse({'societies': serializer.data}, safe=False, status=status.HTTP_200_OK)

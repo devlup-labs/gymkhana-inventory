@@ -20,7 +20,7 @@ class Borrower(models.Model):
         return self.user.username
 
 
-class SocietyAdmin(models.Model):
+class Society(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     society_id = models.IntegerField(default=-1)
     society_name = models.CharField(max_length=50, default='none')
@@ -41,6 +41,6 @@ def create_user_profile(sender, instance, created, **kwargs):
 
         else:
 
-            u = SocietyAdmin.objects.create(user=instance, society_name=instance.first_name,
-                                            society_id=societyIds[mail_prefix[0]])
+            u = Society.objects.create(user=instance, society_name=instance.first_name,
+                                       society_id=societyIds[mail_prefix[0]])
             u.save()
