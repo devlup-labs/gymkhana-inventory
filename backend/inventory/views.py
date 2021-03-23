@@ -10,6 +10,9 @@ from rest_framework.decorators import api_view
 # Create your views here.
 from .models import Equipment, Equipment_issued
 from accounts.models import Society, Borrower
+from rest_framework.views import APIView
+
+
 # from datetime import datetime
 # Create your views here.
 
@@ -42,7 +45,8 @@ def add_equipment(request):
     except ObjectDoesNotExist as e:
         return JsonResponse({'error': str(e)}, safe=False, status=status.HTTP_404_NOT_FOUND)
     except Exception:
-        return JsonResponse({'error': 'Something terrible went wrong'}, safe=False, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JsonResponse({'error': 'Something terrible went wrong'}, safe=False,
+                            status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @api_view(["PUT"])
@@ -58,7 +62,8 @@ def update_equipment(request, id):
     except ObjectDoesNotExist as e:
         return JsonResponse({'error': str(e)}, safe=False, status=status.HTTP_404_NOT_FOUND)
     except Exception:
-        return JsonResponse({'error': 'Something terrible went wrong'}, safe=False, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JsonResponse({'error': 'Something terrible went wrong'}, safe=False,
+                            status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @api_view(["DELETE"])
@@ -92,3 +97,21 @@ def get_pending_returns(request):
     equip = Equipment_issued.objects.filter(borrower=borrowern, isapproved=True)
     serializer = Equipment_issuedSerializer(equip, many=True)
     return JsonResponse({'Equipments To Be Returned': serializer.data}, safe=False, status=status.HTTP_200_OK)
+
+
+class SearchEquipment(APIView):
+
+    def get(self, request, *args, **kwargs):
+
+        search = request.GET['searchText']
+
+        allObjects = Equipment.objects.all()
+
+        returnData = {}
+
+        for Object in allObjects:
+            name = Object.name
+            if search in name and search in name[:len(search) + 1]:
+                returnData[name] = EquipmentSerializer(Object, many=False).data
+
+        return Response({"message": returnData})
