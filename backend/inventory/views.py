@@ -216,7 +216,7 @@ def delete_request(request):
             equipment = equipment_issued.equipment
             society_admin = Society.objects.get(society_id=id)
 
-            if equipment_issued.isapproved == False:
+            if not equipment_issued.isapproved:
                 equipment.numavail += 1
                 equipment.save(update_fields=["numavail"])
 
@@ -244,3 +244,87 @@ def delete_request(request):
         return Response(
             {"message": "Equipment not found"}, status=status.HTTP_404_NOT_FOUND
         )
+
+
+@api_view(["GET"])
+def show_currently_issued(request):
+    mail = request.GET["mail"]
+
+    if Society.objects.filter(mail=mail).exists():
+        society_admin = Society.objects.get(mail=mail)
+        approved_requests = society_admin.approved_requests
+        approved_items = approved_requests["items"]
+
+        return Response({"message": approved_items})
+
+    return Response({"message": "you are not authorized to the handle the request"})
+
+
+@api_view(["POST"])
+def request_extension(request):
+
+    mail = request.data["mail"]
+    code = request.data["code"]
+    duration = request.data["duration"]
+
+    if Equipment_issued.objects.filter(code=code).exists():
+        equipment_issued = Equipment_issued.objects.get(code=code)
+        if equipment_issued.borrower.mail == mail:
+            borrower = equipment_issued.borrower
+            society_id = equipment_issued.society.society_id
+            society = Society.objects.get(society_id=society_id)
+
+            print(equipment_issued.issuedate)
+            print(equipment_issued.returndate)
+
+            request_object = borrower.approved_requests["items"][code]
+
+            del borrower.approved_requests["items"][code]
+            request_object["extension-duration"] = duration
+            borrower.extension["items"][code] = request_object
+            society.extension["items"][code] = request_object
+
+            borrower.save()
+            society.save()
+
+            return Response({"message": "request successfully sent"})
+
+        return Response({"message": "You are not authorized to handle the request"})
+    return Response({"message": "No such equipment exists"})
+
+
+@api_view(["POST"])
+def reject_extension(request):
+    mail = request.data["mail"]
+    code = request.data["code"]
+
+    if Equipment_issued.objects.filter(code=code).exists():
+        equipment_issued = Equipment_issued.objects.get(code=code)
+        if equipment_issued.society.mail == mail:
+
+            borrower = equipment_issued.borrower
+            society_id = equipment_issued.society.society_id
+            society = Society.objects.get(society_id=society_id)
+
+            if code in borrower.extension["items"]:
+
+                print(equipment_issued.issuedate)
+                print(equipment_issued.returndate)
+
+                request_object = borrower.extension["items"][code]
+                del borrower.extension["items"][code]
+                del society.extension["items"][code]
+                del request_object["extension-duration"]
+                society.approved_requests["items"][code] = request_object
+                borrower.approved_requests["items"][code] = request_object
+
+                borrower.save()
+                society.save()
+
+                return Response({"message": "Successfully declined the extension"})
+
+            return Response({"message": "No request for this equipment made"})
+
+        return Response({"message": "You are not authorized to handle the request"})
+
+    return Response({"message": "No such equipment exists"})

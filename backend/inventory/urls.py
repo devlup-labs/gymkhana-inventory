@@ -11,4 +11,7 @@ urlpatterns = [
     path("searchequipment/", views.SearchEquipment.as_view()),
     path("delete-request", views.delete_request),
     path("approve-request", views.approve_request),
+    path("show-currently-issued/", views.show_currently_issued),
+    path("request-extension", views.request_extension),
+    path("reject-extension", views.reject_extension),
 ]
