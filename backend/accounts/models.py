@@ -13,8 +13,11 @@ class Borrower(models.Model):
     role = models.CharField(max_length=15, default='borrower')
     phone_number = models.CharField(max_length=12)
     society_id = models.IntegerField(default=-1)
-
-    # print("YES"*10)
+    pending_requests = models.JSONField(default={"items": {}})
+    approved_requests = models.JSONField(default={"items": {}})
+    declined_requests = models.JSONField(default={"items": {}})
+    returned_equipments = models.JSONField(default={"items": {}})
+    extension = models.JSONField(default={"items": {}})
 
     def __str__(self):
         return self.user.username
@@ -24,6 +27,12 @@ class Society(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     society_id = models.IntegerField(default=-1)
     society_name = models.CharField(max_length=50, default='none')
+    mail = models.CharField(max_length=20, default='')
+    pending_requests = models.JSONField(default={"items": {}})
+    approved_requests = models.JSONField(default={"items": {}})
+    declined_requests = models.JSONField(default={"items": {}})
+    returned_equipments = models.JSONField(default={"items": {}})
+    extension = models.JSONField(default={"items": {}})
 
     def __str__(self):
         return self.user.username
@@ -42,5 +51,5 @@ def create_user_profile(sender, instance, created, **kwargs):
         else:
 
             u = Society.objects.create(user=instance, society_name=instance.first_name,
-                                       society_id=societyIds[mail_prefix[0]])
+                                       society_id=societyIds[mail_prefix[0]], mail=instance.email)
             u.save()
