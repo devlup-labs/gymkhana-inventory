@@ -14,7 +14,9 @@ urlpatterns = [
     path("approve-request", views.approve_request),
     path('decline-request', views.decline_request),
     path('return-equipment', views.return_equipment),
+    path('show-pending-requests/', views.show_pending_requests),
     path("show-currently-issued/", views.show_currently_issued),
     path("request-extension", views.request_extension),
+    path('accept-extension', views.accept_extension),
     path("reject-extension", views.reject_extension),
 ]

@@ -378,6 +378,20 @@ def return_equipment(request):
 
 
 @api_view(["GET"])
+def show_pending_requests(request):
+    mail = request.GET["mail"]
+
+    if Society.objects.filter(mail=mail).exists():
+        society_admin = Society.objects.get(mail=mail)
+        pending_requests = society_admin.pending_requests
+        pending_items = pending_requests["items"]
+
+        return Response({"message": pending_items})
+
+    return Response({"message": "you are not authorized to the handle the request"})
+
+
+@api_view(["GET"])
 def show_currently_issued(request):
     mail = request.GET["mail"]
 
@@ -417,6 +431,43 @@ def request_extension(request):
             return Response({"message": "request successfully sent"})
 
         return Response({"message": "You are not authorized to handle the request"})
+    return Response({"message": "No such equipment exists"})
+
+
+@api_view(["POST"])
+def accept_extension(request):
+    mail = request.data["mail"]
+    code = request.data["code"]
+
+    if Equipment_issued.objects.filter(code=code).exists():
+        equipment_issued = Equipment_issued.objects.get(code=code)
+        if equipment_issued.society.mail == mail:
+
+            borrower = equipment_issued.borrower
+            society_id = equipment_issued.society.society_id
+            society = Society.objects.get(society_id=society_id)
+
+            if code in borrower.extension["items"]:
+                equipment_issued.returndate = equipment_issued.returndate.date() + datetime.timedelta(
+                    days=borrower.extension["items"][code]["extension-duration"])
+                request_object = borrower.extension["items"][code]
+                del (borrower.extension["items"][code])
+                del (society.extension["items"][code])
+                del (request_object["extension-duration"])
+                borrower.approved_requests["items"][code] = request_object
+                society.approved_requests["items"][code] = request_object
+
+                borrower.save()
+                society.save()
+
+                equipment_issued.save()
+
+                return Response({"message": "Accepted the extension"})
+
+            return Response({"message": "No request for this equipment made"})
+
+        return Response({"message": "You are not authorized to handle the request"})
+
     return Response({"message": "No such equipment exists"})
 
 
