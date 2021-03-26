@@ -1,4 +1,6 @@
-# Gymkhana Inventory <a href="https://devlup-labs.github.io"><img src="https://img.shields.io/badge/Developed%20under-Winter%20of%20Code%2C%20DevlUp%20Labs-blue"/></a> ![](https://img.shields.io/badge/Status-Active%20development-blue) ![](https://img.shields.io/badge/Django-v3.1.7-orange) ![](https://img.shields.io/badge/Python-v3.8.5-green)
+# Gymkhana Inventory 
+<a href="https://devlup-labs.github.io"><img src="https://img.shields.io/badge/Developed%20under-Winter%20of%20Code%2C%20DevlUp%20Labs-blue"/></a> ![](https://img.shields.io/badge/Status-Active%20development-blue) ![](https://img.shields.io/badge/Django-v3.1.7-orange) ![](https://img.shields.io/badge/Python-v3.8.5-green)
+
 WebApp to manage Gymkhana Inventory
 
 To make contributions to this repo, check out [contribution.md](contribution.md)
